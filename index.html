@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Aviation | Industry Intelligence Report - March 2026</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap');
+
+        :root {
+            --navy: #0a1628;
+            --navy-light: #132240;
+            --navy-medium: #1a2d50;
+            --gold: #c9a96e;
+            --gold-light: #dfc89e;
+            --gold-dark: #a88b4a;
+            --white: #ffffff;
+            --gray-100: #f7f8fa;
+            --gray-200: #e8ebf0;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --emerald: #10b981;
+            --emerald-dark: #059669;
+            --red: #ef4444;
+            --blue: #3b82f6;
+            --amber: #f59e0b;
+            --purple: #8b5cf6;
+            --cyan: #06b6d4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--gray-100);
+            color: var(--navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy-medium) 100%);
+            color: var(--white);
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a96e' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .report-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(201, 169, 110, 0.15);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            color: var(--gold-light);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .report-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray-300);
+            font-weight: 300;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .hero-stat {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 400;
+        }
+
+        .hero-stat-source {
+            font-size: 10px;
+            color: var(--gray-500);
+            margin-top: 8px;
+        }
+
+        .hero-stat-source a {
+            color: var(--gray-500);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gray-500);
+        }
+
+        .hero-stat-source a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            margin: 48px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .section-number {
+            width: 40px; height: 40px;
+            background: var(--navy);
+            color: var(--gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            color: var(--navy);
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-top: 2px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid var(--gray-200);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .card-subtitle {
+            font-size: 12px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 24px; }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .kpi-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 24px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .kpi-label {
+            font-size: 12px;
+            color: var(--gray-500);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .kpi-change {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+            padding: 3px 10px;
+            border-radius: 100px;
+        }
+
+        .kpi-change.up { background: rgba(16,185,129,0.1); color: var(--emerald-dark); }
+        .kpi-change.down { background: rgba(239,68,68,0.1); color: var(--red); }
+
+        .kpi-source {
+            font-size: 10px;
+            color: var(--gray-400);
+            margin-top: 10px;
+        }
+
+        .kpi-source a {
+            color: var(--gray-400);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gray-400);
+        }
+
+        .kpi-source a:hover { color: var(--navy); }
+
+        /* Chart containers */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+        }
+
+        .chart-container-sm {
+            position: relative;
+            width: 100%;
+            height: 260px;
+        }
+
+        /* Competitive Table */
+        .comp-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 13px;
+        }
+
+        .comp-table thead th {
+            background: var(--navy);
+            color: var(--white);
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comp-table thead th:first-child { border-radius: 12px 0 0 0; }
+        .comp-table thead th:last-child { border-radius: 0 12px 0 0; }
+
+        .comp-table tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--gray-200);
+            vertical-align: middle;
+        }
+
+        .comp-table tbody tr:last-child td { border-bottom: none; }
+        .comp-table tbody tr:last-child td:first-child { border-radius: 0 0 0 12px; }
+        .comp-table tbody tr:last-child td:last-child { border-radius: 0 0 12px 0; }
+
+        .comp-table tbody tr:hover { background: rgba(201,169,110,0.04); }
+
+        .comp-table .highlight-row {
+            background: rgba(201,169,110,0.08);
+            font-weight: 600;
+        }
+
+        .comp-table .highlight-row:hover {
+            background: rgba(201,169,110,0.12);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-gold { background: rgba(201,169,110,0.15); color: var(--gold-dark); }
+        .badge-green { background: rgba(16,185,129,0.1); color: var(--emerald-dark); }
+        .badge-blue { background: rgba(59,130,246,0.1); color: var(--blue); }
+        .badge-purple { background: rgba(139,92,246,0.1); color: var(--purple); }
+
+        .source-tag {
+            font-size: 10px;
+            color: var(--gray-400);
+            display: block;
+            margin-top: 4px;
+        }
+
+        .source-tag a {
+            color: var(--gray-400);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gray-400);
+        }
+
+        .source-tag a:hover { color: var(--navy); }
+
+        /* Trend Cards */
+        .trend-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .trend-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .trend-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .trend-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+
+        .trend-card p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        .trend-metric {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .trend-metric-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--navy);
+        }
+
+        .trend-metric-label {
+            font-size: 11px;
+            color: var(--gray-400);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--navy));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 6px;
+            width: 12px; height: 12px;
+            background: var(--gold);
+            border: 3px solid var(--white);
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px var(--gold);
+        }
+
+        .timeline-date {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .report-footer {
+            background: var(--navy);
+            color: var(--gray-400);
+            padding: 48px 0;
+            margin-top: 64px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .footer-prepared {
+            text-align: right;
+            font-size: 12px;
+        }
+
+        .footer-prepared strong {
+            color: var(--gold);
+        }
+
+        /* Sources Section */
+        .sources-section {
+            margin-top: 48px;
+            padding: 32px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .sources-section h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--navy);
+        }
+
+        .source-list {
+            column-count: 2;
+            column-gap: 32px;
+            font-size: 12px;
+            line-height: 2;
+            color: var(--gray-500);
+        }
+
+        .source-list a {
+            color: var(--gray-500);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--gray-300);
+            transition: color 0.2s;
+        }
+
+        .source-list a:hover { color: var(--navy); }
+
+        .source-list li {
+            break-inside: avoid;
+            margin-bottom: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+            .grid-2, .grid-3, .grid-4, .kpi-grid { grid-template-columns: 1fr; }
+            .source-list { column-count: 1; }
+            .footer-content { flex-direction: column; text-align: center; gap: 20px; }
+            .footer-prepared { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="report-badge">
+            <span class="dot"></span>
+            Monthly Industry Intelligence Report
+        </div>
+        <h1>Signature Aviation &<br><span>The FBO Industry Landscape</span></h1>
+        <p class="hero-subtitle">A comprehensive analysis of market dynamics, competitive positioning, emerging trends, and strategic opportunities in business aviation ground services.</p>
+
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-value">$25.6B</div>
+                <div class="hero-stat-label">Global FBO Market Size (2024)</div>
+                <div class="hero-stat-source"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners</a></div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">7.6%</div>
+                <div class="hero-stat-label">CAGR Through 2031</div>
+                <div class="hero-stat-source"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners</a></div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">200+</div>
+                <div class="hero-stat-label">Signature FBO Locations Worldwide</div>
+                <div class="hero-stat-source"><a href="https://www.signatureaviation.com/" target="_blank">SignatureAviation.com</a></div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-value">3.8M</div>
+                <div class="hero-stat-label">Private Jet Flights in 2025</div>
+                <div class="hero-stat-source"><a href="https://impactwealth.org/private-jet-demand-hits-all-time-high-in-2025/" target="_blank">Impact Wealth</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+
+    <!-- SECTION 1: MARKET OVERVIEW -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">01</div>
+            <div>
+                <div class="section-title">Market Overview</div>
+                <div class="section-subtitle">FBO market sizing, growth trajectory, and demand drivers</div>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Global FBO Market 2024</div>
+                <div class="kpi-value">$25.6B</div>
+                <div class="kpi-change up">+7.6% CAGR to 2031</div>
+                <div class="kpi-source"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners, 2025</a></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">North America FBO Market 2024</div>
+                <div class="kpi-value">$16.4B</div>
+                <div class="kpi-change up">+6.7% CAGR to 2032</div>
+                <div class="kpi-source"><a href="https://www.verifiedmarketresearch.com/product/north-america-fixed-base-operators-fbo-market/" target="_blank">Verified Market Research</a></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Business Jet Market 2025</div>
+                <div class="kpi-value">$48.1B</div>
+                <div class="kpi-change up">+4.6% CAGR to 2034</div>
+                <div class="kpi-source"><a href="https://www.fortunebusinessinsights.com/industry-reports/business-jet-market-101585" target="_blank">Fortune Business Insights</a></div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">FBO Market Growth Trajectory</div>
+                <div class="card-subtitle">Projected global FBO market size, USD Billions (2024-2031)</div>
+                <div class="chart-container">
+                    <canvas id="marketGrowthChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">Source: The Insight Partners</a></div>
+            </div>
+            <div class="card">
+                <div class="card-title">FBO Revenue Mix by Category</div>
+                <div class="card-subtitle">Typical revenue breakdown for US-based FBOs</div>
+                <div class="chart-container">
+                    <canvas id="revenueMixChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://rngstrategyconsulting.com/insights/industry/aerospace-defense/fbo-industry-business-model/" target="_blank">Source: RNG Strategy Consulting</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: FLIGHT ACTIVITY -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">02</div>
+            <div>
+                <div class="section-title">Flight Activity & Demand</div>
+                <div class="section-subtitle">Business jet utilization, deliveries, and demand indicators</div>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">YoY Flight Hour Growth</div>
+                <div class="kpi-value">+3%</div>
+                <div class="kpi-change up">Accelerating from flat 2023-24</div>
+                <div class="kpi-source"><a href="https://www.jetnet.com/resources/blog/mid-2025-market-snapshot-business-jet-inventory-pricing-activity" target="_blank">JETNET, Mid-2025</a></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">2025 Jet Deliveries</div>
+                <div class="kpi-value">854</div>
+                <div class="kpi-change up">+11.8% vs 2024</div>
+                <div class="kpi-source"><a href="https://privatejetcardcomparisons.com/research/new-private-jet-deliveries-by-manufacturer-2015-to-2020/" target="_blank">Private Jet Card Comparisons</a></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">10-Year Delivery Forecast</div>
+                <div class="kpi-value">8,500</div>
+                <div class="kpi-change up">$283B total value</div>
+                <div class="kpi-source"><a href="https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast" target="_blank">Honeywell Forecast, Oct 2025</a></div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">Business Jet Deliveries by Manufacturer</div>
+                <div class="card-subtitle">Units delivered in 2024 vs 2025</div>
+                <div class="chart-container">
+                    <canvas id="deliveriesChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://privatejetcardcomparisons.com/research/new-private-jet-deliveries-by-manufacturer-2015-to-2020/" target="_blank">Source: Private Jet Card Comparisons / GAMA</a></div>
+            </div>
+            <div class="card">
+                <div class="card-title">Regional Business Aviation Growth</div>
+                <div class="card-subtitle">Year-over-year activity change by region (2025 vs 2024)</div>
+                <div class="chart-container">
+                    <canvas id="regionalChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://flyapg.com/blog/global-business-aviation-market-expansion-2025" target="_blank">Source: APG / WingX / AeroTime</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3: COMPETITIVE LANDSCAPE -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">03</div>
+            <div>
+                <div class="section-title">Competitive Landscape</div>
+                <div class="section-subtitle">FBO operator comparison, market positioning, and M&A activity</div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 24px;">
+            <div class="card-title">FBO Operator Comparison</div>
+            <div class="card-subtitle">Key metrics across major Fixed Base Operators</div>
+            <div style="overflow-x: auto;">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Locations</th>
+                            <th>Ownership</th>
+                            <th>Est. Valuation</th>
+                            <th>Key Differentiator</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td><strong>Signature Aviation</strong></td>
+                            <td><strong>200+</strong></td>
+                            <td>GIP / Blackstone / Cascade</td>
+                            <td>$4.7B (2021 acq.)</td>
+                            <td><span class="badge badge-gold">Largest global network</span></td>
+                            <td><span class="source-tag"><a href="https://www.blackstone.com/news/press/blackstone-cascade-and-global-infrastructure-partners-announce-terms-of-a-recommended-offer-for-signature-aviation-plc/" target="_blank">Blackstone</a></span></td>
+                        </tr>
+                        <tr>
+                            <td>Atlantic Aviation</td>
+                            <td>106+</td>
+                            <td>KKR</td>
+                            <td>~$10B (2025 est.)</td>
+                            <td><span class="badge badge-blue">US market depth</span></td>
+                            <td><span class="source-tag"><a href="https://www.bloomberg.com/news/articles/2025-04-16/kkr-is-said-to-explore-10-billion-sale-of-atlantic-aviation" target="_blank">Bloomberg</a></span></td>
+                        </tr>
+                        <tr>
+                            <td>Jet Aviation</td>
+                            <td>30</td>
+                            <td>General Dynamics</td>
+                            <td>N/A (subsidiary)</td>
+                            <td><span class="badge badge-purple">Full-service MRO</span></td>
+                            <td><span class="source-tag"><a href="https://www.jetaviation.com/company/about/" target="_blank">Jet Aviation</a></span></td>
+                        </tr>
+                        <tr>
+                            <td>Million Air</td>
+                            <td>36</td>
+                            <td>Private (Franchise)</td>
+                            <td>N/A</td>
+                            <td><span class="badge badge-green">Franchise model</span></td>
+                            <td><span class="source-tag"><a href="https://www.millionair.com/locations/" target="_blank">Million Air</a></span></td>
+                        </tr>
+                        <tr>
+                            <td>Sheltair</td>
+                            <td>16</td>
+                            <td>Private</td>
+                            <td>N/A</td>
+                            <td><span class="badge badge-green">SE US focus, top-rated</span></td>
+                            <td><span class="source-tag"><a href="https://www.sheltairaviation.com/" target="_blank">Sheltair</a></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">FBO Network Size Comparison</div>
+                <div class="card-subtitle">Number of locations by operator</div>
+                <div class="chart-container">
+                    <canvas id="locationChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px">Sources: Operator websites &amp; press releases (see table above)</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Recent M&A Activity</div>
+                <div class="card-subtitle">Key FBO transactions and consolidation moves</div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Apr 2025</div>
+                        <div class="timeline-title">KKR Explores $10B Atlantic Aviation Sale</div>
+                        <div class="timeline-desc">KKR weighing sale or IPO of Atlantic Aviation, doubling the $4.5B it paid in 2021.
+                            <span class="source-tag"><a href="https://www.bloomberg.com/news/articles/2025-04-16/kkr-is-said-to-explore-10-billion-sale-of-atlantic-aviation" target="_blank">Bloomberg</a></span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-title">Atlantic Aviation Acquires 3 FBOs</div>
+                        <div class="timeline-desc">Added Santa Fe, Kalispell (MT), and Sint Maarten locations, expanding to 106+ FBOs.
+                            <span class="source-tag"><a href="https://www.atlanticaviation.com/news/" target="_blank">Atlantic Aviation</a></span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2025</div>
+                        <div class="timeline-title">Jet Aviation Enters Paris-Le Bourget</div>
+                        <div class="timeline-desc">Acquired ASTONSKY's FBO operations at Europe's busiest business aviation airport.
+                            <span class="source-tag"><a href="https://www.privsource.com/acquisitions/deal/jet-aviation-acquires-astonsky-fbo-operations-at-paris-le-bourget-ArSAm9" target="_blank">PrivSource</a></span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 2025</div>
+                        <div class="timeline-title">Signature x UrbanV eVTOL Partnership</div>
+                        <div class="timeline-desc">Joint venture to build vertiport networks across FL, NY, CA, and TX.
+                            <span class="source-tag"><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-02-27/fbo-chains-working-build-vertiports-evtol-ops" target="_blank">AIN</a></span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Feb 2021</div>
+                        <div class="timeline-title">Signature Aviation Taken Private ($4.7B)</div>
+                        <div class="timeline-desc">GIP, Blackstone, and Cascade (Bill Gates) consortium acquisition completed.
+                            <span class="source-tag"><a href="https://www.mergersight.com/post/blackstone-s-gip-s-and-cascade-s-3-5b-takeover-of-signature-aviation" target="_blank">MergerSight</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 4: SIGNATURE SPOTLIGHT -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">04</div>
+            <div>
+                <div class="section-title">Signature Aviation Spotlight</div>
+                <div class="section-subtitle">Recent developments, expansion, and strategic initiatives</div>
+            </div>
+        </div>
+
+        <div class="grid-3" style="margin-bottom: 24px;">
+            <div class="trend-card">
+                <div class="trend-icon" style="background: rgba(59,130,246,0.1);">&#128640;</div>
+                <h4>Signature Vision Launch</h4>
+                <p>Launched Feb 2026, Signature's new digital portal enables real-time reservation management, transparent pricing, and integrated TailWins loyalty and BRAVO pricing programs.</p>
+                <div class="trend-metric">
+                    <div class="trend-metric-label">Launch Date</div>
+                    <div class="trend-metric-value">Feb 2026</div>
+                </div>
+                <span class="source-tag"><a href="https://www.globenewswire.com/news-release/2026/02/11/3236347/0/en/Signature-Aviation-Launches-Signature-Vision-a-Personalized-Digital-Hub-for-its-Guests.html" target="_blank">GlobeNewsWire</a></span>
+            </div>
+            <div class="trend-card">
+                <div class="trend-icon" style="background: rgba(16,185,129,0.1);">&#127811;</div>
+                <h4>SAF Expansion to 33 Locations</h4>
+                <p>Largest FBO SAF distributor globally. Blended SAF now at 33 locations including 100% blended supply at LAX and SFO. Six new airports added in 2025.</p>
+                <div class="trend-metric">
+                    <div class="trend-metric-label">SAF Locations</div>
+                    <div class="trend-metric-value">33</div>
+                </div>
+                <span class="source-tag"><a href="https://www.signatureaviation.com/services/sustainable-aviation-fuel" target="_blank">Signature Aviation</a></span>
+            </div>
+            <div class="trend-card">
+                <div class="trend-icon" style="background: rgba(139,92,246,0.1);">&#9992;&#65039;</div>
+                <h4>New Terminal Openings</h4>
+                <p>Palm Beach North (Nov 2025): 15,700 sq ft premium terminal. Glasgow (Mar 2026): New Scottish FBO. Coming soon: Westhampton Beach, NY and Guanacaste, Costa Rica.</p>
+                <div class="trend-metric">
+                    <div class="trend-metric-label">New Terminals (2025-26)</div>
+                    <div class="trend-metric-value">4</div>
+                </div>
+                <span class="source-tag"><a href="https://www.globenewswire.com/news-release/2025/11/12/3186376/0/en/Signature-Aviation-Elevates-Travel-in-South-Florida-with-New-Private-Aviation-Terminal-in-Palm-Beach.html" target="_blank">GlobeNewsWire</a></span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Signature Aviation at a Glance</div>
+            <div class="card-subtitle">Key facts and figures</div>
+            <div class="grid-4" style="margin-top: 16px;">
+                <div>
+                    <div class="kpi-label">Global Locations</div>
+                    <div class="kpi-value" style="font-size:24px;">200+</div>
+                    <div class="kpi-source"><a href="https://www.signatureaviation.com/" target="_blank">SignatureAviation.com</a></div>
+                </div>
+                <div>
+                    <div class="kpi-label">Fuel Network</div>
+                    <div class="kpi-value" style="font-size:24px;">400+</div>
+                    <div class="kpi-source"><a href="https://www.signatureaviation.com/" target="_blank">Incl. Signature Select &amp; independents</a></div>
+                </div>
+                <div>
+                    <div class="kpi-label">MRO Locations</div>
+                    <div class="kpi-value" style="font-size:24px;">18</div>
+                    <div class="kpi-source"><a href="https://www.signatureaviation.com/" target="_blank">16 US + 2 UK</a></div>
+                </div>
+                <div>
+                    <div class="kpi-label">Customers Served</div>
+                    <div class="kpi-value" style="font-size:24px;">8,000+</div>
+                    <div class="kpi-source"><a href="https://www.global-infra.com/portfolio-page/signature-aviation/" target="_blank">GIP Portfolio</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 5: EMERGING TRENDS -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">05</div>
+            <div>
+                <div class="section-title">Emerging Trends & Strategic Opportunities</div>
+                <div class="section-subtitle">Key forces reshaping the FBO and business aviation landscape</div>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 24px;">
+            <div class="card">
+                <div class="card-title">Sustainable Aviation Fuel (SAF) Market Growth</div>
+                <div class="card-subtitle">Global SAF market value, USD Billions</div>
+                <div class="chart-container">
+                    <canvas id="safChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://www.fortunebusinessinsights.com/sustainable-aviation-fuel-saf-market-111563" target="_blank">Source: Fortune Business Insights</a></div>
+            </div>
+            <div class="card">
+                <div class="card-title">eVTOL / Advanced Air Mobility Market</div>
+                <div class="card-subtitle">Projected market size, USD Billions</div>
+                <div class="chart-container">
+                    <canvas id="evtolChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://www.fortunebusinessinsights.com/advanced-air-mobility-market-113574" target="_blank">Source: Fortune Business Insights</a></div>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="trend-card">
+                <div class="trend-icon" style="background: rgba(245,158,11,0.1);">&#128176;</div>
+                <h4>UHNW Population Surge</h4>
+                <p>Global UHNW individuals reached 510,810 by mid-2025, up 5.4% in H1 alone. Projected to hit 676,970 by 2030 (+31%). Directly fuels private aviation demand.</p>
+                <div class="trend-metric">
+                    <div class="trend-metric-label">UHNW Population (H1 2025)</div>
+                    <div class="trend-metric-value">510,810</div>
+                </div>
+                <span class="source-tag"><a href="https://altrata.com/reports/world-ultra-wealth-report-2025" target="_blank">Altrata World Ultra Wealth Report 2025</a></span>
+            </div>
+            <div class="trend-card">
+                <div class="trend-icon" style="background: rgba(239,68,68,0.1);">&#128104;&#8205;&#9992;&#65039;</div>
+                <h4>Pilot & Workforce Shortage</h4>
+                <p>Boeing forecasts demand for 2.4M new pilots, technicians, and cabin crew over 20 years. Business aviation struggles to compete with airlines on compensation and schedule predictability.</p>
+                <div class="trend-metric">
+                    <div class="trend-metric-label">20-Year Demand</div>
+                    <div class="trend-metric-value">2.4M</div>
+                </div>
+                <span class="source-tag"><a href="https://investors.boeing.com/investors/news/press-release-details/2025/Boeing-Forecasts-20-Year-Global-Demand-for-Nearly-2-4-Million-New-Commercial-Pilots-Technicians-Cabin-Crew/default.aspx" target="_blank">Boeing, 2025</a></span>
+            </div>
+            <div class="trend-card">
+                <div class="trend-icon" style="background: rgba(6,182,212,0.1);">&#128200;</div>
+                <h4>Fractional Market Shifts</h4>
+                <p>NetJets grew 55,737 flight hours YoY. Flexjet ordered $7B in new Embraer jets. Wheels Up declined 50.7% in flight hours over 5 years. Market consolidating around leaders.</p>
+                <div class="trend-metric">
+                    <div class="trend-metric-label">NetJets Position</div>
+                    <div class="trend-metric-value">#1</div>
+                </div>
+                <span class="source-tag"><a href="https://privatejetcardcomparisons.com/2026/02/23/2025s-30-biggest-charter-fractional-private-jet-companies/" target="_blank">Private Jet Card Comparisons</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 6: SAF DEEP DIVE -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">06</div>
+            <div>
+                <div class="section-title">Sustainability & SAF Landscape</div>
+                <div class="section-subtitle">Production forecasts, cost dynamics, and adoption challenges</div>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">2025 Global SAF Production</div>
+                <div class="kpi-value">1.9 Mt</div>
+                <div class="kpi-change up">2x vs 2024 (1.0 Mt)</div>
+                <div class="kpi-source"><a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA, Dec 2025</a></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">SAF % of Jet Fuel</div>
+                <div class="kpi-value">0.6%</div>
+                <div class="kpi-change down">Rising to 0.8% in 2026</div>
+                <div class="kpi-source"><a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA, Dec 2025</a></div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">SAF Price Premium</div>
+                <div class="kpi-value">2-5x</div>
+                <div class="kpi-change down">vs conventional Jet-A fuel</div>
+                <div class="kpi-source"><a href="https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/120925-global-saf-supply-to-slow-in-2026-on-high-costs-policy-issues-iata" target="_blank">S&P Global</a></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">SAF Market Growth Forecast</div>
+            <div class="card-subtitle">Global SAF market projected to grow at 33.3% CAGR through 2034</div>
+            <div class="chart-container" style="height: 280px;">
+                <canvas id="safDetailChart"></canvas>
+            </div>
+            <div class="kpi-source" style="margin-top:12px">
+                <a href="https://www.fortunebusinessinsights.com/sustainable-aviation-fuel-saf-market-111563" target="_blank">Source: Fortune Business Insights</a> |
+                <a href="https://www.marketsandmarkets.com/Market-Reports/sustainable-aviation-fuel-market-70301163.html" target="_blank">Markets and Markets</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 7: DEMAND DRIVERS -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">07</div>
+            <div>
+                <div class="section-title">Demand Drivers & Outlook</div>
+                <div class="section-subtitle">Key factors fueling business aviation growth through 2030</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Growth Driver Impact Assessment</div>
+            <div class="card-subtitle">Estimated impact on FBO demand over next 5 years</div>
+            <div class="chart-container" style="height: 340px;">
+                <canvas id="driversChart"></canvas>
+            </div>
+            <div class="kpi-source" style="margin-top:12px">Analysis based on: <a href="https://altrata.com/reports/world-ultra-wealth-report-2025" target="_blank">Altrata</a>, <a href="https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast" target="_blank">Honeywell</a>, <a href="https://www.fortunebusinessinsights.com/advanced-air-mobility-market-113574" target="_blank">Fortune BI</a>, <a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA</a></div>
+        </div>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="sources-section">
+        <h3>Sources & References</h3>
+        <ol class="source-list">
+            <li><a href="https://www.signatureaviation.com/" target="_blank">Signature Aviation Official Website</a></li>
+            <li><a href="https://www.global-infra.com/portfolio-page/signature-aviation/" target="_blank">Global Infrastructure Partners - Signature Aviation Portfolio</a></li>
+            <li><a href="https://www.blackstone.com/news/press/blackstone-cascade-and-global-infrastructure-partners-announce-terms-of-a-recommended-offer-for-signature-aviation-plc/" target="_blank">Blackstone - Signature Aviation Acquisition Announcement</a></li>
+            <li><a href="https://www.mergersight.com/post/blackstone-s-gip-s-and-cascade-s-3-5b-takeover-of-signature-aviation" target="_blank">MergerSight - $4.7B Takeover Analysis</a></li>
+            <li><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners - FBO Market Size Forecast</a></li>
+            <li><a href="https://www.verifiedmarketresearch.com/product/north-america-fixed-base-operators-fbo-market/" target="_blank">Verified Market Research - North America FBO Market</a></li>
+            <li><a href="https://www.fortunebusinessinsights.com/industry-reports/business-jet-market-101585" target="_blank">Fortune Business Insights - Business Jet Market</a></li>
+            <li><a href="https://www.jetnet.com/resources/blog/mid-2025-market-snapshot-business-jet-inventory-pricing-activity" target="_blank">JETNET - Mid-2025 Market Snapshot</a></li>
+            <li><a href="https://www.aerotime.aero/articles/business-aviation-booming-2025-global-surge" target="_blank">AeroTime - Business Aviation Booming 2025</a></li>
+            <li><a href="https://privatejetcardcomparisons.com/research/new-private-jet-deliveries-by-manufacturer-2015-to-2020/" target="_blank">Private Jet Card Comparisons - Delivery Data</a></li>
+            <li><a href="https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast" target="_blank">Honeywell - 10-Year Business Jet Forecast</a></li>
+            <li><a href="https://flyapg.com/blog/global-business-aviation-market-expansion-2025" target="_blank">APG - Global Business Aviation Expansion</a></li>
+            <li><a href="https://www.bloomberg.com/news/articles/2025-04-16/kkr-is-said-to-explore-10-billion-sale-of-atlantic-aviation" target="_blank">Bloomberg - KKR Atlantic Aviation $10B Sale</a></li>
+            <li><a href="https://www.atlanticaviation.com/news/" target="_blank">Atlantic Aviation News & Acquisitions</a></li>
+            <li><a href="https://www.jetaviation.com/company/about/" target="_blank">Jet Aviation - About (General Dynamics)</a></li>
+            <li><a href="https://www.millionair.com/locations/" target="_blank">Million Air Locations</a></li>
+            <li><a href="https://www.sheltairaviation.com/" target="_blank">Sheltair Aviation</a></li>
+            <li><a href="https://www.globenewswire.com/news-release/2026/02/11/3236347/0/en/Signature-Aviation-Launches-Signature-Vision-a-Personalized-Digital-Hub-for-its-Guests.html" target="_blank">Signature Vision Launch Announcement</a></li>
+            <li><a href="https://www.signatureaviation.com/services/sustainable-aviation-fuel" target="_blank">Signature Aviation SAF Program</a></li>
+            <li><a href="https://www.globenewswire.com/news-release/2025/11/12/3186376/0/en/Signature-Aviation-Elevates-Travel-in-South-Florida-with-New-Private-Aviation-Terminal-in-Palm-Beach.html" target="_blank">Signature Palm Beach Terminal Opening</a></li>
+            <li><a href="https://www.globenewswire.com/news-release/2026/03/16/3256363/0/en/Signature-Aviation-Debuts-State-of-the-Art-Private-Aviation-Terminal-in-Glasgow.html" target="_blank">Signature Glasgow Terminal Debut</a></li>
+            <li><a href="https://rngstrategyconsulting.com/insights/industry/aerospace-defense/fbo-industry-business-model/" target="_blank">RNG Strategy - FBO Business Model & Revenue Mix</a></li>
+            <li><a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA - SAF Production Growth Report</a></li>
+            <li><a href="https://www.fortunebusinessinsights.com/sustainable-aviation-fuel-saf-market-111563" target="_blank">Fortune Business Insights - SAF Market Forecast</a></li>
+            <li><a href="https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/120925-global-saf-supply-to-slow-in-2026-on-high-costs-policy-issues-iata" target="_blank">S&P Global - SAF Supply Outlook</a></li>
+            <li><a href="https://altrata.com/reports/world-ultra-wealth-report-2025" target="_blank">Altrata - World Ultra Wealth Report 2025</a></li>
+            <li><a href="https://impactwealth.org/private-jet-demand-hits-all-time-high-in-2025/" target="_blank">Impact Wealth - Private Jet Demand 2025</a></li>
+            <li><a href="https://investors.boeing.com/investors/news/press-release-details/2025/Boeing-Forecasts-20-Year-Global-Demand-for-Nearly-2-4-Million-New-Commercial-Pilots-Technicians-Cabin-Crew/default.aspx" target="_blank">Boeing - Pilot Demand Forecast</a></li>
+            <li><a href="https://privatejetcardcomparisons.com/2026/02/23/2025s-30-biggest-charter-fractional-private-jet-companies/" target="_blank">Top 30 Charter/Fractional Companies 2025</a></li>
+            <li><a href="https://www.fortunebusinessinsights.com/advanced-air-mobility-market-113574" target="_blank">Fortune Business Insights - AAM Market</a></li>
+            <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-02-27/fbo-chains-working-build-vertiports-evtol-ops" target="_blank">AIN - FBO Chains Building Vertiport Infrastructure</a></li>
+            <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2024-04-01/ain-fbo-survey-2024-americas-and-emeaa" target="_blank">AIN FBO Survey 2024</a></li>
+            <li><a href="https://www.hkbac.com/wp-content/uploads/2025/05/Result-AINonline_FBOSurvey2025.pdf" target="_blank">AIN FBO Survey 2025 Results</a></li>
+        </ol>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="report-footer">
+    <div class="footer-content">
+        <div>
+            <div class="footer-logo">Signature Aviation Industry Report</div>
+            <div class="footer-tagline">Monthly Intelligence Briefing | March 2026</div>
+        </div>
+        <div class="footer-prepared">
+            Prepared by <strong>Marketwake</strong><br>
+            Data as of March 27, 2026<br>
+            Next report: April 2026
+        </div>
+    </div>
+</div>
+
+<script>
+    // Global Chart.js defaults
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.font.size = 12;
+    Chart.defaults.color = '#6b7280';
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
+    Chart.defaults.plugins.legend.labels.padding = 20;
+
+    const navy = '#0a1628';
+    const gold = '#c9a96e';
+    const goldLight = '#dfc89e';
+    const emerald = '#10b981';
+    const blue = '#3b82f6';
+    const purple = '#8b5cf6';
+    const amber = '#f59e0b';
+    const cyan = '#06b6d4';
+    const red = '#ef4444';
+
+    // 1. FBO Market Growth Chart
+    new Chart(document.getElementById('marketGrowthChart'), {
+        type: 'bar',
+        data: {
+            labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030', '2031'],
+            datasets: [{
+                label: 'Market Size ($B)',
+                data: [25.6, 27.5, 29.6, 31.8, 34.3, 36.9, 39.7, 41.5],
+                backgroundColor: function(ctx) {
+                    const chart = ctx.chart;
+                    const {ctx: context, chartArea} = chart;
+                    if (!chartArea) return gold;
+                    const gradient = context.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
+                    gradient.addColorStop(0, 'rgba(201,169,110,0.3)');
+                    gradient.addColorStop(1, 'rgba(201,169,110,0.9)');
+                    return gradient;
+                },
+                borderColor: gold,
+                borderWidth: 1,
+                borderRadius: 6,
+                borderSkipped: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    color: navy,
+                    font: { weight: '600', size: 11 },
+                    formatter: v => '$' + v + 'B'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    min: 20,
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                    ticks: { callback: v => '$' + v + 'B' }
+                },
+                x: { grid: { display: false } }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    // 2. Revenue Mix Doughnut
+    new Chart(document.getElementById('revenueMixChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Fuel Sales', 'Ground Handling', 'Hangar & Ramp Fees', 'MRO / Technical', 'Passenger Amenities', 'Other Services'],
+            datasets: [{
+                data: [55, 15, 12, 10, 5, 3],
+                backgroundColor: [navy, gold, blue, purple, emerald, amber],
+                borderWidth: 2,
+                borderColor: '#ffffff',
+                hoverOffset: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '55%',
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: { font: { size: 11 }, padding: 12 }
+                },
+                datalabels: {
+                    color: '#fff',
+                    font: { weight: '700', size: 12 },
+                    formatter: v => v + '%',
+                    display: function(ctx) {
+                        return ctx.dataset.data[ctx.dataIndex] > 5;
+                    }
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    // 3. Deliveries by Manufacturer
+    new Chart(document.getElementById('deliveriesChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Textron', 'Gulfstream', 'Embraer', 'Bombardier', 'Dassault'],
+            datasets: [
+                {
+                    label: '2024',
+                    data: [151, 134, 130, 152, 42],
+                    backgroundColor: 'rgba(201,169,110,0.3)',
+                    borderColor: gold,
+                    borderWidth: 1,
+                    borderRadius: 4
+                },
+                {
+                    label: '2025',
+                    data: [171, 160, 155, 158, 45],
+                    backgroundColor: navy,
+                    borderColor: navy,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top' },
+                datalabels: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.04)' }
+                },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+
+    // 4. Regional Growth
+    new Chart(document.getElementById('regionalChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Brazil', 'Colombia', 'Middle East', 'Asia-Pacific', 'North America', 'Europe'],
+            datasets: [{
+                label: 'YoY Growth %',
+                data: [45, 42, 30, 15, 3, -2],
+                backgroundColor: function(ctx) {
+                    return ctx.raw >= 0 ? emerald : red;
+                },
+                borderRadius: 6,
+                borderSkipped: false
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                datalabels: {
+                    anchor: function(ctx) { return ctx.dataset.data[ctx.dataIndex] >= 0 ? 'end' : 'start'; },
+                    align: function(ctx) { return ctx.dataset.data[ctx.dataIndex] >= 0 ? 'right' : 'left'; },
+                    color: navy,
+                    font: { weight: '600', size: 12 },
+                    formatter: v => (v > 0 ? '+' : '') + v + '%'
+                }
+            },
+            scales: {
+                x: {
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                    ticks: { callback: v => v + '%' }
+                },
+                y: { grid: { display: false } }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    // 5. FBO Location Comparison
+    new Chart(document.getElementById('locationChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Signature Aviation', 'Atlantic Aviation', 'Million Air', 'Jet Aviation', 'Sheltair'],
+            datasets: [{
+                label: 'Locations',
+                data: [200, 106, 36, 30, 16],
+                backgroundColor: [gold, blue, purple, cyan, emerald],
+                borderRadius: 8,
+                borderSkipped: false,
+                barThickness: 40
+            }]
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'right',
+                    color: navy,
+                    font: { weight: '700', size: 13 },
+                    formatter: v => v + (v === 200 ? '+' : '')
+                }
+            },
+            scales: {
+                x: { display: false, max: 260 },
+                y: {
+                    grid: { display: false },
+                    ticks: { font: { weight: '600' } }
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    // 6. SAF Market
+    new Chart(document.getElementById('safChart'), {
+        type: 'line',
+        data: {
+            labels: ['2025', '2026', '2028', '2030', '2032', '2034'],
+            datasets: [{
+                label: 'SAF Market ($B)',
+                data: [2.72, 4.02, 8.5, 16.0, 27.0, 40.09],
+                borderColor: emerald,
+                backgroundColor: 'rgba(16,185,129,0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 5,
+                pointBackgroundColor: emerald,
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                borderWidth: 3
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    color: navy,
+                    font: { weight: '600', size: 11 },
+                    formatter: v => '$' + v + 'B'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                    ticks: { callback: v => '$' + v + 'B' }
+                },
+                x: { grid: { display: false } }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    // 7. eVTOL / AAM Market
+    new Chart(document.getElementById('evtolChart'), {
+        type: 'line',
+        data: {
+            labels: ['2025', '2027', '2029', '2031', '2033', '2034'],
+            datasets: [{
+                label: 'AAM Market ($B)',
+                data: [13.27, 22.0, 36.0, 52.0, 72.0, 87.0],
+                borderColor: purple,
+                backgroundColor: 'rgba(139,92,246,0.1)',
+                fill: true,
+                tension: 0.4,
+                pointRadius: 5,
+                pointBackgroundColor: purple,
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                borderWidth: 3
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    color: navy,
+                    font: { weight: '600', size: 11 },
+                    formatter: v => '$' + v + 'B'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                    ticks: { callback: v => '$' + v + 'B' }
+                },
+                x: { grid: { display: false } }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    // 8. SAF Detail Bar Chart
+    new Chart(document.getElementById('safDetailChart'), {
+        type: 'bar',
+        data: {
+            labels: ['2024', '2025', '2026', '2028', '2030', '2034'],
+            datasets: [
+                {
+                    label: 'Production (Mt)',
+                    data: [1.0, 1.9, 2.4, 5.0, 10.0, 25.0],
+                    backgroundColor: emerald,
+                    borderRadius: 4,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'Market Value ($B)',
+                    data: [1.5, 2.72, 4.02, 8.5, 16.0, 40.09],
+                    type: 'line',
+                    borderColor: gold,
+                    backgroundColor: 'transparent',
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointBackgroundColor: gold,
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    tension: 0.4,
+                    yAxisID: 'y1'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top' },
+                datalabels: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    position: 'left',
+                    title: { display: true, text: 'Production (Mt)', font: { size: 11 } },
+                    grid: { color: 'rgba(0,0,0,0.04)' }
+                },
+                y1: {
+                    beginAtZero: true,
+                    position: 'right',
+                    title: { display: true, text: 'Market Value ($B)', font: { size: 11 } },
+                    grid: { drawOnChartArea: false }
+                },
+                x: { grid: { display: false } }
+            }
+        }
+    });
+
+    // 9. Growth Drivers Radar
+    new Chart(document.getElementById('driversChart'), {
+        type: 'radar',
+        data: {
+            labels: [
+                'UHNW Population Growth',
+                'New Jet Deliveries',
+                'SAF / Sustainability',
+                'eVTOL / AAM',
+                'Digital Transformation',
+                'Fractional/Charter Growth',
+                'EM Region Expansion',
+                'FBO Consolidation'
+            ],
+            datasets: [{
+                label: 'Current Impact',
+                data: [85, 78, 55, 30, 65, 80, 70, 90],
+                borderColor: navy,
+                backgroundColor: 'rgba(10,22,40,0.1)',
+                borderWidth: 2,
+                pointBackgroundColor: navy,
+                pointRadius: 4
+            }, {
+                label: 'Projected Impact (2030)',
+                data: [92, 85, 85, 75, 90, 85, 82, 75],
+                borderColor: gold,
+                backgroundColor: 'rgba(201,169,110,0.1)',
+                borderWidth: 2,
+                pointBackgroundColor: gold,
+                pointRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top' },
+                datalabels: { display: false }
+            },
+            scales: {
+                r: {
+                    beginAtZero: true,
+                    max: 100,
+                    ticks: { stepSize: 25, font: { size: 10 } },
+                    pointLabels: { font: { size: 11, weight: '500' } },
+                    grid: { color: 'rgba(0,0,0,0.06)' }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
