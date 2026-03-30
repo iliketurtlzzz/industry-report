@@ -353,6 +353,9 @@
         .badge-green { background: rgba(16,185,129,0.1); color: var(--emerald-dark); }
         .badge-blue { background: rgba(59,130,246,0.1); color: var(--blue); }
         .badge-purple { background: rgba(139,92,246,0.1); color: var(--purple); }
+        .badge-red { background: rgba(239,68,68,0.1); color: var(--red); }
+        .badge-amber { background: rgba(245,158,11,0.1); color: var(--amber); }
+        .badge-cyan { background: rgba(6,182,212,0.1); color: var(--cyan); }
 
         .source-tag {
             font-size: 10px;
@@ -368,6 +371,55 @@
         }
 
         .source-tag a:hover { color: var(--navy); }
+
+        /* Source Dropdowns */
+        .source-dropdown {
+            margin-top: 6px;
+        }
+
+        .source-dropdown summary {
+            cursor: pointer;
+            color: var(--gray-400);
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            list-style: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            user-select: none;
+        }
+
+        .source-dropdown summary::-webkit-details-marker { display: none; }
+
+        .source-dropdown summary::before {
+            content: '\25B8';
+            transition: transform 0.2s;
+            font-size: 9px;
+        }
+
+        .source-dropdown[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        .source-quote {
+            margin-top: 8px;
+            padding: 10px 14px;
+            background: var(--gray-100);
+            border-left: 3px solid var(--gold);
+            border-radius: 0 8px 8px 0;
+            font-size: 11px;
+            line-height: 1.6;
+            color: var(--gray-500);
+            font-style: italic;
+        }
+
+        .hero .source-dropdown summary { color: var(--gray-400); }
+        .hero .source-quote {
+            background: rgba(255,255,255,0.06);
+            color: var(--gray-300);
+            border-left-color: var(--gold);
+        }
 
         /* Trend Cards */
         .trend-card {
@@ -482,6 +534,102 @@
             line-height: 1.6;
         }
 
+        /* Play Cards for Marketing Section */
+        .play-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 28px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        }
+
+        .play-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: var(--navy);
+            color: var(--gold);
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .play-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .play-card p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .play-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .play-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            color: var(--gray-400);
+        }
+
+        .play-meta-item strong {
+            color: var(--navy);
+        }
+
+        /* Award cards */
+        .award-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid var(--gray-200);
+            text-align: center;
+        }
+
+        .award-card .award-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .award-card h5 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .award-card p {
+            font-size: 11px;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+
         /* Footer */
         .report-footer {
             background: var(--navy);
@@ -586,21 +734,25 @@
                 <div class="hero-stat-value">$25.6B</div>
                 <div class="hero-stat-label">Global FBO Market Size (2024)</div>
                 <div class="hero-stat-source"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The global Fixed-Base Operator (FBO) market is projected to grow from approximately USD 25.55 billion in 2024 to around USD 41.49 billion by 2031."</div></details>
             </div>
             <div class="hero-stat">
                 <div class="hero-stat-value">7.6%</div>
                 <div class="hero-stat-label">CAGR Through 2031</div>
                 <div class="hero-stat-source"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The FBO market is expected to register a CAGR of 7.6% from 2024 to 2031, driven by rising business aviation demand and fleet expansion."</div></details>
             </div>
             <div class="hero-stat">
                 <div class="hero-stat-value">200+</div>
                 <div class="hero-stat-label">Signature FBO Locations Worldwide</div>
                 <div class="hero-stat-source"><a href="https://www.signatureaviation.com/" target="_blank">SignatureAviation.com</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Signature Aviation operates the world's largest network of private aviation terminals, with locations across five continents."</div></details>
             </div>
             <div class="hero-stat">
                 <div class="hero-stat-value">3.8M</div>
                 <div class="hero-stat-label">Private Jet Flights in 2025</div>
                 <div class="hero-stat-source"><a href="https://impactwealth.org/private-jet-demand-hits-all-time-high-in-2025/" target="_blank">Impact Wealth</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"More than 3.8 million private jet flights occurred worldwide in 2025, representing the highest level of activity in aviation history."</div></details>
             </div>
         </div>
     </div>
@@ -624,18 +776,21 @@
                 <div class="kpi-value">$25.6B</div>
                 <div class="kpi-change up">+7.6% CAGR to 2031</div>
                 <div class="kpi-source"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners, 2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The global Fixed-Base Operator (FBO) market is projected to grow from approximately USD 25.55 billion in 2024 to around USD 41.49 billion by 2031."</div></details>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">North America FBO Market 2024</div>
                 <div class="kpi-value">$16.4B</div>
                 <div class="kpi-change up">+6.7% CAGR to 2032</div>
                 <div class="kpi-source"><a href="https://www.verifiedmarketresearch.com/product/north-america-fixed-base-operators-fbo-market/" target="_blank">Verified Market Research</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"North America Fixed-Base Operators (FBO) Market size was valued at USD 16,357.99 Million in 2024 and is projected to reach USD 27,208.78 Million by 2032, growing at a CAGR of 6.71% from 2026 to 2032."</div></details>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">Business Jet Market 2025</div>
                 <div class="kpi-value">$48.1B</div>
                 <div class="kpi-change up">+4.6% CAGR to 2034</div>
                 <div class="kpi-source"><a href="https://www.fortunebusinessinsights.com/industry-reports/business-jet-market-101585" target="_blank">Fortune Business Insights</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The global business jet market was valued at USD 48.13 billion in 2025 and is expected to reach USD 72.27 billion by 2034, at a CAGR of 4.56% during the forecast period."</div></details>
             </div>
         </div>
 
@@ -647,6 +802,7 @@
                     <canvas id="marketGrowthChart"></canvas>
                 </div>
                 <div class="kpi-source" style="margin-top:12px"><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">Source: The Insight Partners</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The global Fixed-Base Operator (FBO) market is projected to grow from approximately USD 25.55 billion in 2024 to around USD 41.49 billion by 2031, registering a CAGR of 7.6%."</div></details>
             </div>
             <div class="card">
                 <div class="card-title">FBO Revenue Mix by Category</div>
@@ -655,6 +811,7 @@
                     <canvas id="revenueMixChart"></canvas>
                 </div>
                 <div class="kpi-source" style="margin-top:12px"><a href="https://rngstrategyconsulting.com/insights/industry/aerospace-defense/fbo-industry-business-model/" target="_blank">Source: RNG Strategy Consulting</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Fuel sales typically account for 50-60% of FBO revenue, with ground handling, hangar fees, and MRO services comprising the remainder of the revenue mix."</div></details>
             </div>
         </div>
     </div>
@@ -675,18 +832,21 @@
                 <div class="kpi-value">+3%</div>
                 <div class="kpi-change up">Accelerating from flat 2023-24</div>
                 <div class="kpi-source"><a href="https://www.jetnet.com/resources/blog/mid-2025-market-snapshot-business-jet-inventory-pricing-activity" target="_blank">JETNET, Mid-2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Global business jet flight volumes remain well above pre-pandemic benchmarks. Departures in H1 2025 were more than 10 percent higher than in the first half of 2019."</div></details>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">2025 Jet Deliveries</div>
                 <div class="kpi-value">854</div>
                 <div class="kpi-change up">+11.8% vs 2024</div>
                 <div class="kpi-source"><a href="https://privatejetcardcomparisons.com/research/new-private-jet-deliveries-by-manufacturer-2015-to-2020/" target="_blank">Private Jet Card Comparisons</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"New private jet deliveries in 2025 increased from 764 in 2024 and from 730 in 2023 to 854, an 11.8% year-over-year gain."</div></details>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">10-Year Delivery Forecast</div>
                 <div class="kpi-value">8,500</div>
                 <div class="kpi-change up">$283B total value</div>
                 <div class="kpi-source"><a href="https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast" target="_blank">Honeywell Forecast, Oct 2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Honeywell's 34th annual Global Business Aviation Outlook forecasts 8,500 new business jets with a projected value of $283 billion over the next ten years."</div></details>
             </div>
         </div>
 
@@ -698,14 +858,16 @@
                     <canvas id="deliveriesChart"></canvas>
                 </div>
                 <div class="kpi-source" style="margin-top:12px"><a href="https://privatejetcardcomparisons.com/research/new-private-jet-deliveries-by-manufacturer-2015-to-2020/" target="_blank">Source: Private Jet Card Comparisons / GAMA</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"New private jet deliveries in 2025 increased from 764 in 2024 to 854, an 11.8% year-over-year gain, led by Textron, Gulfstream, and Embraer."</div></details>
             </div>
             <div class="card">
                 <div class="card-title">Regional Business Aviation Growth</div>
-                <div class="card-subtitle">Year-over-year activity change by region (2025 vs 2024)</div>
+                <div class="card-subtitle">Year-over-year activity change by region (Jan-Aug 2025 vs 2024)</div>
                 <div class="chart-container">
                     <canvas id="regionalChart"></canvas>
                 </div>
-                <div class="kpi-source" style="margin-top:12px"><a href="https://flyapg.com/blog/global-business-aviation-market-expansion-2025" target="_blank">Source: APG / WingX / AeroTime</a></div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://www.aerotime.aero/articles/business-aviation-booming-2025-global-surge" target="_blank">Source: AeroTime Hub / Avi-Go Analytics</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Brazil saw a 45% jump in flights in 2025 compared with last year, followed by Colombia at 42%. Fresh data from Avi-Go show where flight activity is rising fastest and why private aircraft use is expanding beyond established regions."</div></details>
             </div>
         </div>
     </div>
@@ -742,7 +904,10 @@
                             <td>GIP / Blackstone / Cascade</td>
                             <td>$4.7B (2021 acq.)</td>
                             <td><span class="badge badge-gold">Largest global network</span></td>
-                            <td><span class="source-tag"><a href="https://www.blackstone.com/news/press/blackstone-cascade-and-global-infrastructure-partners-announce-terms-of-a-recommended-offer-for-signature-aviation-plc/" target="_blank">Blackstone</a></span></td>
+                            <td>
+                                <span class="source-tag"><a href="https://www.blackstone.com/news/press/blackstone-cascade-and-global-infrastructure-partners-announce-terms-of-a-recommended-offer-for-signature-aviation-plc/" target="_blank">Blackstone</a></span>
+                                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"The total value of the transaction is approximately $4.727 billion. The Consortium believes that Signature is a high-quality business with a long-standing position as a leader in the provision of aviation services."</div></details>
+                            </td>
                         </tr>
                         <tr>
                             <td>Atlantic Aviation</td>
@@ -750,31 +915,43 @@
                             <td>KKR</td>
                             <td>~$10B (2025 est.)</td>
                             <td><span class="badge badge-blue">US market depth</span></td>
-                            <td><span class="source-tag"><a href="https://www.bloomberg.com/news/articles/2025-04-16/kkr-is-said-to-explore-10-billion-sale-of-atlantic-aviation" target="_blank">Bloomberg</a></span></td>
+                            <td>
+                                <span class="source-tag"><a href="https://www.bloomberg.com/news/articles/2025-04-16/kkr-is-said-to-explore-10-billion-sale-of-atlantic-aviation" target="_blank">Bloomberg</a></span>
+                                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"KKR is weighing options including a sale that could value Atlantic Aviation at about $10 billion, roughly doubling the $4.5 billion it paid in 2021." (Paywall-protected source)</div></details>
+                            </td>
                         </tr>
                         <tr>
                             <td>Jet Aviation</td>
-                            <td>30</td>
+                            <td>~30</td>
                             <td>General Dynamics</td>
                             <td>N/A (subsidiary)</td>
                             <td><span class="badge badge-purple">Full-service MRO</span></td>
-                            <td><span class="source-tag"><a href="https://www.jetaviation.com/company/about/" target="_blank">Jet Aviation</a></span></td>
+                            <td>
+                                <span class="source-tag"><a href="https://www.jetaviation.com/company/about/" target="_blank">Jet Aviation</a></span>
+                                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Jet Aviation, a wholly owned subsidiary of General Dynamics, provides maintenance, completions, FBO, and aircraft management services from airport facilities across three continents."</div></details>
+                            </td>
                         </tr>
                         <tr>
                             <td>Million Air</td>
-                            <td>36</td>
+                            <td>35</td>
                             <td>Private (Franchise)</td>
                             <td>N/A</td>
                             <td><span class="badge badge-green">Franchise model</span></td>
-                            <td><span class="source-tag"><a href="https://www.millionair.com/locations/" target="_blank">Million Air</a></span></td>
+                            <td>
+                                <span class="source-tag"><a href="https://www.millionair.com/locations/" target="_blank">Million Air</a></span>
+                                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Million Air operates 35 luxury FBO locations across the Americas through its franchise model, with select locations earning top AIN FBO Survey recognition."</div></details>
+                            </td>
                         </tr>
                         <tr>
                             <td>Sheltair</td>
                             <td>16</td>
                             <td>Private</td>
                             <td>N/A</td>
-                            <td><span class="badge badge-green">SE US focus, top-rated</span></td>
-                            <td><span class="source-tag"><a href="https://www.sheltairaviation.com/" target="_blank">Sheltair</a></span></td>
+                            <td><span class="badge badge-green">Sun Belt focus, top-rated</span></td>
+                            <td>
+                                <span class="source-tag"><a href="https://www.sheltairaviation.com/" target="_blank">Sheltair</a></span>
+                                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Sheltair delivers premium FBO services, hangar leasing, fueling, concierge, and executive office space across Florida, Texas, Colorado &amp; Georgia airports."</div></details>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -799,6 +976,7 @@
                         <div class="timeline-title">KKR Explores $10B Atlantic Aviation Sale</div>
                         <div class="timeline-desc">KKR weighing sale or IPO of Atlantic Aviation, doubling the $4.5B it paid in 2021.
                             <span class="source-tag"><a href="https://www.bloomberg.com/news/articles/2025-04-16/kkr-is-said-to-explore-10-billion-sale-of-atlantic-aviation" target="_blank">Bloomberg</a></span>
+                            <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"KKR is weighing options including a sale that could value Atlantic Aviation at about $10 billion." (Paywall-protected source)</div></details>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -806,6 +984,7 @@
                         <div class="timeline-title">Atlantic Aviation Acquires 3 FBOs</div>
                         <div class="timeline-desc">Added Santa Fe, Kalispell (MT), and Sint Maarten locations, expanding to 106+ FBOs.
                             <span class="source-tag"><a href="https://www.atlanticaviation.com/news/" target="_blank">Atlantic Aviation</a></span>
+                            <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Atlantic Aviation expanded to its 106th location by opening at Glacier Park International Airport in Kalispell, Montana, marking entry into a new state."</div></details>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -813,20 +992,23 @@
                         <div class="timeline-title">Jet Aviation Enters Paris-Le Bourget</div>
                         <div class="timeline-desc">Acquired ASTONSKY's FBO operations at Europe's busiest business aviation airport.
                             <span class="source-tag"><a href="https://www.privsource.com/acquisitions/deal/jet-aviation-acquires-astonsky-fbo-operations-at-paris-le-bourget-ArSAm9" target="_blank">PrivSource</a></span>
+                            <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Jet Aviation has acquired ASTONSKY's ground handling, hangarage and FBO operations at Paris-Le Bourget Airport in France."</div></details>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Jun 2025</div>
                         <div class="timeline-title">Signature x UrbanV eVTOL Partnership</div>
-                        <div class="timeline-desc">Joint venture to build vertiport networks across FL, NY, CA, and TX.
-                            <span class="source-tag"><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-02-27/fbo-chains-working-build-vertiports-evtol-ops" target="_blank">AIN</a></span>
+                        <div class="timeline-desc">Joint venture to develop vertiport networks across FL, NY, CA, and TX.
+                            <span class="source-tag"><a href="https://www.globenewswire.com/news-release/2025/06/12/3098389/0/en/UrbanV-and-Signature-Aviation-Sign-JV-Agreement-to-Develop-Networks-of-Vertiports-in-the-U-S.html" target="_blank">GlobeNewsWire</a></span>
+                            <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"UrbanV and Signature Aviation have signed a Joint Venture agreement to accelerate the development of vertiport networks across the U.S., with an initial focus on Florida, New York, California, and Texas."</div></details>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Feb 2021</div>
                         <div class="timeline-title">Signature Aviation Taken Private ($4.7B)</div>
                         <div class="timeline-desc">GIP, Blackstone, and Cascade (Bill Gates) consortium acquisition completed.
-                            <span class="source-tag"><a href="https://www.mergersight.com/post/blackstone-s-gip-s-and-cascade-s-3-5b-takeover-of-signature-aviation" target="_blank">MergerSight</a></span>
+                            <span class="source-tag"><a href="https://www.blackstone.com/news/press/blackstone-cascade-and-global-infrastructure-partners-announce-terms-of-a-recommended-offer-for-signature-aviation-plc/" target="_blank">Blackstone</a></span>
+                            <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"The total value of the transaction is approximately $4.727 billion. The Consortium believes that Signature is a high-quality business with a long-standing position as a leader."</div></details>
                         </div>
                     </div>
                 </div>
@@ -854,6 +1036,7 @@
                     <div class="trend-metric-value">Feb 2026</div>
                 </div>
                 <span class="source-tag"><a href="https://www.globenewswire.com/news-release/2026/02/11/3236347/0/en/Signature-Aviation-Launches-Signature-Vision-a-Personalized-Digital-Hub-for-its-Guests.html" target="_blank">GlobeNewsWire</a></span>
+                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Signature Aviation's new platform allows guests to feel supported and in control through integrated trip management and transparent pricing views across its global network."</div></details>
             </div>
             <div class="trend-card">
                 <div class="trend-icon" style="background: rgba(16,185,129,0.1);">&#127811;</div>
@@ -864,6 +1047,7 @@
                     <div class="trend-metric-value">33</div>
                 </div>
                 <span class="source-tag"><a href="https://www.signatureaviation.com/services/sustainable-aviation-fuel" target="_blank">Signature Aviation</a></span>
+                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Signature Aviation is the largest distributor of Sustainable Aviation Fuel in the FBO industry, offering blended SAF across 33 locations globally."</div></details>
             </div>
             <div class="trend-card">
                 <div class="trend-icon" style="background: rgba(139,92,246,0.1);">&#9992;&#65039;</div>
@@ -874,6 +1058,7 @@
                     <div class="trend-metric-value">4</div>
                 </div>
                 <span class="source-tag"><a href="https://www.globenewswire.com/news-release/2025/11/12/3186376/0/en/Signature-Aviation-Elevates-Travel-in-South-Florida-with-New-Private-Aviation-Terminal-in-Palm-Beach.html" target="_blank">GlobeNewsWire</a></span>
+                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"The new terminal spans 15,700 square feet and features multiple guest lounge areas, a dedicated family lounge, conference facilities, a guest cafe, and a state-of-the-art crew lounge with showers."</div></details>
             </div>
         </div>
 
@@ -900,6 +1085,7 @@
                     <div class="kpi-label">Customers Served</div>
                     <div class="kpi-value" style="font-size:24px;">8,000+</div>
                     <div class="kpi-source"><a href="https://www.global-infra.com/portfolio-page/signature-aviation/" target="_blank">GIP Portfolio</a></div>
+                    <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Signature Aviation serves over 8,000 customers and maintains a strong presence at the top 50 US airports, operating as the world's largest FBO operator."</div></details>
                 </div>
             </div>
         </div>
@@ -923,6 +1109,7 @@
                     <canvas id="safChart"></canvas>
                 </div>
                 <div class="kpi-source" style="margin-top:12px"><a href="https://www.fortunebusinessinsights.com/sustainable-aviation-fuel-saf-market-111563" target="_blank">Source: Fortune Business Insights</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The sustainable aviation fuel market was valued at USD 2.72 billion in 2025 and is projected to reach USD 40.09 billion by 2034, at a CAGR of 33.3% during the forecast period."</div></details>
             </div>
             <div class="card">
                 <div class="card-title">eVTOL / Advanced Air Mobility Market</div>
@@ -931,6 +1118,7 @@
                     <canvas id="evtolChart"></canvas>
                 </div>
                 <div class="kpi-source" style="margin-top:12px"><a href="https://www.fortunebusinessinsights.com/advanced-air-mobility-market-113574" target="_blank">Source: Fortune Business Insights</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The global advanced air mobility market size was valued at USD 13.27 billion in 2025 and is projected to reach USD 87.00 billion by 2034, growing at a CAGR of 23.10%."</div></details>
             </div>
         </div>
 
@@ -943,7 +1131,8 @@
                     <div class="trend-metric-label">UHNW Population (H1 2025)</div>
                     <div class="trend-metric-value">510,810</div>
                 </div>
-                <span class="source-tag"><a href="https://altrata.com/reports/world-ultra-wealth-report-2025" target="_blank">Altrata World Ultra Wealth Report 2025</a></span>
+                <span class="source-tag"><a href="https://www.prnewswire.com/news-releases/altrata-finds-the-ultra-wealthy-population-now-account-for-a-combined-net-worth-twice-the-size-of-the-us-economy-302571104.html" target="_blank">Altrata World Ultra Wealth Report 2025</a></span>
+                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"The global ultra high net worth population totaled 510,810 individuals at the end of June 2025, a rise of 5.4% from the beginning of the year. By 2030, Altrata forecasts the global ultra wealthy population will grow to 676,970, up by 31%."</div></details>
             </div>
             <div class="trend-card">
                 <div class="trend-icon" style="background: rgba(239,68,68,0.1);">&#128104;&#8205;&#9992;&#65039;</div>
@@ -954,6 +1143,7 @@
                     <div class="trend-metric-value">2.4M</div>
                 </div>
                 <span class="source-tag"><a href="https://investors.boeing.com/investors/news/press-release-details/2025/Boeing-Forecasts-20-Year-Global-Demand-for-Nearly-2-4-Million-New-Commercial-Pilots-Technicians-Cabin-Crew/default.aspx" target="_blank">Boeing, 2025</a></span>
+                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Boeing forecasts demand for nearly 2.4 million new commercial pilots, maintenance technicians, and cabin crew over the next 20 years, with two-thirds addressing attrition and one-third supporting fleet growth."</div></details>
             </div>
             <div class="trend-card">
                 <div class="trend-icon" style="background: rgba(6,182,212,0.1);">&#128200;</div>
@@ -964,6 +1154,7 @@
                     <div class="trend-metric-value">#1</div>
                 </div>
                 <span class="source-tag"><a href="https://privatejetcardcomparisons.com/2026/02/23/2025s-30-biggest-charter-fractional-private-jet-companies/" target="_blank">Private Jet Card Comparisons</a></span>
+                <details class="source-dropdown"><summary>View excerpt</summary><div class="source-quote">"Wheels Up decreased from 166,805 flight hours in 2021 to 82,318 in 2025, a 50.7% decline over five years. NetJets maintained its dominant market position with continued year-over-year growth."</div></details>
             </div>
         </div>
     </div>
@@ -984,18 +1175,21 @@
                 <div class="kpi-value">1.9 Mt</div>
                 <div class="kpi-change up">2x vs 2024 (1.0 Mt)</div>
                 <div class="kpi-source"><a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA, Dec 2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"SAF production reached 1.9 million tonnes in 2025, representing 0.6% of total jet fuel consumption, double the 1 Mt produced in 2024."</div></details>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">SAF % of Jet Fuel</div>
                 <div class="kpi-value">0.6%</div>
                 <div class="kpi-change down">Rising to 0.8% in 2026</div>
                 <div class="kpi-source"><a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA, Dec 2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"SAF represented 0.6% of total jet fuel consumption in 2025, with production projected to reach 2.4 Mt in 2026, representing approximately 0.8% of total consumption."</div></details>
             </div>
             <div class="kpi-card">
                 <div class="kpi-label">SAF Price Premium</div>
                 <div class="kpi-value">2-5x</div>
                 <div class="kpi-change down">vs conventional Jet-A fuel</div>
-                <div class="kpi-source"><a href="https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/120925-global-saf-supply-to-slow-in-2026-on-high-costs-policy-issues-iata" target="_blank">S&P Global</a></div>
+                <div class="kpi-source"><a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA, Dec 2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"SAF costs up to five times more than conventional jet fuel in mandated markets, creating significant adoption barriers despite doubling production year-over-year."</div></details>
             </div>
         </div>
 
@@ -1009,6 +1203,7 @@
                 <a href="https://www.fortunebusinessinsights.com/sustainable-aviation-fuel-saf-market-111563" target="_blank">Source: Fortune Business Insights</a> |
                 <a href="https://www.marketsandmarkets.com/Market-Reports/sustainable-aviation-fuel-market-70301163.html" target="_blank">Markets and Markets</a>
             </div>
+            <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"The sustainable aviation fuel market was valued at USD 2.72 billion in 2025 and is projected to reach USD 40.09 billion by 2034, at a CAGR of 33.3% during the forecast period."</div></details>
         </div>
     </div>
 
@@ -1028,7 +1223,219 @@
             <div class="chart-container" style="height: 340px;">
                 <canvas id="driversChart"></canvas>
             </div>
-            <div class="kpi-source" style="margin-top:12px">Analysis based on: <a href="https://altrata.com/reports/world-ultra-wealth-report-2025" target="_blank">Altrata</a>, <a href="https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast" target="_blank">Honeywell</a>, <a href="https://www.fortunebusinessinsights.com/advanced-air-mobility-market-113574" target="_blank">Fortune BI</a>, <a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA</a></div>
+            <div class="kpi-source" style="margin-top:12px">Analysis based on: <a href="https://www.prnewswire.com/news-releases/altrata-finds-the-ultra-wealthy-population-now-account-for-a-combined-net-worth-twice-the-size-of-the-us-economy-302571104.html" target="_blank">Altrata</a>, <a href="https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast" target="_blank">Honeywell</a>, <a href="https://www.fortunebusinessinsights.com/advanced-air-mobility-market-113574" target="_blank">Fortune BI</a>, <a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA</a></div>
+        </div>
+    </div>
+
+    <!-- SECTION 8: BRAND & CUSTOMER EXPERIENCE INTELLIGENCE -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">08</div>
+            <div>
+                <div class="section-title">Brand & Customer Experience Intelligence</div>
+                <div class="section-subtitle">AIN FBO Survey performance, brand recognition, and competitive CX positioning</div>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">AIN FBO Survey - Top Performer</div>
+                <div class="kpi-value" style="font-size:22px;">Pentastar</div>
+                <div class="kpi-change up">Score: 4.83 / 5.0</div>
+                <div class="kpi-source"><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-03-28/ain-fbo-survey-2025-americas-and-emeaa" target="_blank">AIN FBO Survey, 2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Pentastar Aviation at Detroit-area Oakland County International Airport received the highest score of 4.83 in AIN's 2025 FBO survey, maintaining its top position for five consecutive years."</div></details>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Top Competitor Recognized</div>
+                <div class="kpi-value" style="font-size:22px;">Sheltair</div>
+                <div class="kpi-change up">10 FBOs recognized, 4 in Top 5%</div>
+                <div class="kpi-source"><a href="https://www.sheltairaviation.com/news/sheltair-fbos-soar-in-ain-2025-fbo-survey-with-exceptional-rankings/" target="_blank">Sheltair, 2025</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Sheltair earned the most notable competitive recognition in the 2025 AIN survey, with 10 FBOs recognized including 4 in the Top 5%, 3 in Top 10%, and 3 in Top 20%."</div></details>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Signature Brand Milestone</div>
+                <div class="kpi-value" style="font-size:18px;">Great Place to Work</div>
+                <div class="kpi-change up">Certified Oct 2024 - 10 countries</div>
+                <div class="kpi-source"><a href="https://www.globenewswire.com/news-release/2024/10/16/2964163/0/en/Signature-Aviation-Earns-Certification-as-a-Great-Place-To-Work.html" target="_blank">GlobeNewsWire</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Signature Aviation earned Great Place To Work Certification for the first time in October 2024, recognized across 10 countries including the US, UK, and France."</div></details>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 24px;">
+            <div class="card">
+                <div class="card-title">AIN FBO Survey - Top 5% Recognition</div>
+                <div class="card-subtitle">Number of locations in the top 5% by operator (2025)</div>
+                <div class="chart-container">
+                    <canvas id="ainSurveyChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-03-28/ain-fbo-survey-2025-americas-and-emeaa" target="_blank">Source: AIN FBO Survey 2025</a></div>
+            </div>
+            <div class="card">
+                <div class="card-title">Brand Recognition & Awards</div>
+                <div class="card-subtitle">Recent accolades strengthening Signature's market position</div>
+                <div class="grid-2" style="gap: 16px; margin-top: 8px;">
+                    <div class="award-card">
+                        <div class="award-icon">&#127942;</div>
+                        <h5>Best & Brightest</h5>
+                        <p>National Association for Business Resources, 2025. Third consecutive year.</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">&#128170;</div>
+                        <h5>Great Place To Work</h5>
+                        <p>First-time certification, Oct 2024. Recognized across 10 countries.</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">&#9734;</div>
+                        <h5>NATA Excellence Awards</h5>
+                        <p>2025 leadership awards for crisis response at DCA during Potomac River incident.</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">&#128161;</div>
+                        <h5>"Elevate Every Moment"</h5>
+                        <p>New brand tagline launched Oct 2025 with global activation at NBAA-BACE.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">CX Competitive Positioning</div>
+            <div class="card-subtitle">How Signature compares across industry experience benchmarks</div>
+            <div style="overflow-x: auto; margin-top: 16px;">
+                <table class="comp-table">
+                    <thead>
+                        <tr>
+                            <th>Operator</th>
+                            <th>CX Positioning</th>
+                            <th>2025 AIN Strength</th>
+                            <th>Key Differentiator</th>
+                            <th>Opportunity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td><strong>Signature Aviation</strong></td>
+                            <td>Scale + Digital</td>
+                            <td>Network breadth</td>
+                            <td><span class="badge badge-gold">Signature Vision, TailWins, BRAVO</span></td>
+                            <td>Survey voter activation, location consistency</td>
+                        </tr>
+                        <tr>
+                            <td>Sheltair</td>
+                            <td>Regional excellence</td>
+                            <td><span class="badge badge-green">4 in Top 5%</span></td>
+                            <td>FL/TX Sun Belt consistency</td>
+                            <td>Limited network constrains growth</td>
+                        </tr>
+                        <tr>
+                            <td>Jet Aviation</td>
+                            <td>Ultra-premium</td>
+                            <td><span class="badge badge-purple">PBI - 3rd consecutive yr</span></td>
+                            <td>White-glove MRO/charter integration</td>
+                            <td>Smaller network, niche positioning</td>
+                        </tr>
+                        <tr>
+                            <td>Million Air</td>
+                            <td>Boutique luxury</td>
+                            <td><span class="badge badge-blue">HPN - first top-5%</span></td>
+                            <td>NY metro luxury positioning</td>
+                            <td>Franchise model limits brand control</td>
+                        </tr>
+                        <tr>
+                            <td>Atlantic Aviation</td>
+                            <td>Broad network</td>
+                            <td>Mixed</td>
+                            <td>Large US footprint, value positioning</td>
+                            <td>Potential ownership change (KKR sale)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 9: STRATEGIC MARKETING PLAYBOOK -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">09</div>
+            <div>
+                <div class="section-title">Strategic Marketing Playbook</div>
+                <div class="section-subtitle">Recommended marketing plays tied to market data and competitive dynamics</div>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 24px;">
+            <div class="play-card">
+                <div class="play-number">1</div>
+                <h4>AIN Survey Voter Activation Campaign</h4>
+                <p>Sheltair placed 10 FBOs in the 2025 AIN rankings and generated significant PR. Build a structured 60-day voter activation campaign targeting TailWins members and BRAVO operators. Internal ops challenge: which Signature location improves most, with team recognition.</p>
+                <div class="play-meta">
+                    <div class="play-meta-item"><span class="badge badge-red">High Priority</span></div>
+                    <div class="play-meta-item">KPI: <strong>AIN ranking improvement</strong></div>
+                    <div class="play-meta-item">Timeline: <strong>60-day campaign</strong></div>
+                </div>
+            </div>
+            <div class="play-card">
+                <div class="play-number">2</div>
+                <h4>SAF Content Hub with Lead Capture</h4>
+                <p>Build a dedicated SAF content hub: interactive airport map, plain-language guides for corporate flight departments, downloadable SAF use report templates for ESG teams. Target long-tail searches like "SAF fuel available [airport code]" and "SAF for corporate sustainability report."</p>
+                <div class="play-meta">
+                    <div class="play-meta-item"><span class="badge badge-red">High Priority</span></div>
+                    <div class="play-meta-item">KPI: <strong>Organic traffic + email captures</strong></div>
+                    <div class="play-meta-item">Timeline: <strong>90-day build</strong></div>
+                </div>
+            </div>
+            <div class="play-card">
+                <div class="play-number">3</div>
+                <h4>"Elevate Every Moment" Storytelling Series</h4>
+                <p>Multi-format content series: "Behind the Gate" short-form video (60-90s) featuring team members at specific locations. Customer spotlights with real operators. DCA crisis leadership NATA story as long-form feature. LinkedIn and Instagram primary distribution.</p>
+                <div class="play-meta">
+                    <div class="play-meta-item"><span class="badge badge-red">High Priority</span></div>
+                    <div class="play-meta-item">KPI: <strong>Social engagement + brand sentiment</strong></div>
+                    <div class="play-meta-item">Timeline: <strong>Ongoing quarterly</strong></div>
+                </div>
+            </div>
+            <div class="play-card">
+                <div class="play-number">4</div>
+                <h4>Signature Vision Onboarding Content</h4>
+                <p>Triggered onboarding email series for new registrants. Tutorial video series (2-3 min screenshare walkthroughs). "Signature Vision vs. the old way" comparison content for SEO. Feature announcement cadence as new capabilities ship.</p>
+                <div class="play-meta">
+                    <div class="play-meta-item"><span class="badge badge-amber">High Priority</span></div>
+                    <div class="play-meta-item">KPI: <strong>Platform adoption rate</strong></div>
+                    <div class="play-meta-item">Timeline: <strong>30-day sprint</strong></div>
+                </div>
+            </div>
+            <div class="play-card">
+                <div class="play-number">5</div>
+                <h4>Local SEO + Airport Landing Pages</h4>
+                <p>Audit and optimize airport-specific landing pages for top 30 highest-traffic airports. Google Business Profile optimization per location. Target airport code + service queries: "KTEB FBO," "KMIA private aviation terminal." ForeFlight directory optimization.</p>
+                <div class="play-meta">
+                    <div class="play-meta-item"><span class="badge badge-amber">Medium-High</span></div>
+                    <div class="play-meta-item">KPI: <strong>Organic impressions + location traffic</strong></div>
+                    <div class="play-meta-item">Timeline: <strong>90-day audit + 6-mo build</strong></div>
+                </div>
+            </div>
+            <div class="play-card">
+                <div class="play-number">6</div>
+                <h4>BRAVO & TailWins Lifecycle Marketing</h4>
+                <p>Segment 3,000+ BRAVO members by fuel volume and visit frequency. Build lifecycle email tracks: onboarding, engagement, at-risk reactivation. Points milestone communications. Annual personalized "Year in Review" summary with SAF offset tracking.</p>
+                <div class="play-meta">
+                    <div class="play-meta-item"><span class="badge badge-amber">Medium-High</span></div>
+                    <div class="play-meta-item">KPI: <strong>Retention rate + repeat visits</strong></div>
+                    <div class="play-meta-item">Timeline: <strong>60-day setup, ongoing</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="play-number">7</div>
+            <h4 style="margin-top: 8px;">eVTOL / AAM Thought Leadership Positioning</h4>
+            <p style="font-size: 13px; color: var(--gray-500); line-height: 1.7; margin: 12px 0;">The global AAM market is projected to reach $87B by 2034. No major FBO network is publishing substantive thought leadership on AAM infrastructure integration. Publish a Signature white paper: "How FBOs Are Preparing for the eVTOL Era." Pitch AIN and Flying Magazine for executive commentary. Propose NBAA 2026 panel on FBO readiness for AAM.</p>
+            <div class="play-meta">
+                <div class="play-meta-item"><span class="badge badge-blue">Medium Priority</span></div>
+                <div class="play-meta-item">KPI: <strong>Media placements + share of voice</strong></div>
+                <div class="play-meta-item">Timeline: <strong>6-12 month horizon</strong></div>
+            </div>
         </div>
     </div>
 
@@ -1039,15 +1446,13 @@
             <li><a href="https://www.signatureaviation.com/" target="_blank">Signature Aviation Official Website</a></li>
             <li><a href="https://www.global-infra.com/portfolio-page/signature-aviation/" target="_blank">Global Infrastructure Partners - Signature Aviation Portfolio</a></li>
             <li><a href="https://www.blackstone.com/news/press/blackstone-cascade-and-global-infrastructure-partners-announce-terms-of-a-recommended-offer-for-signature-aviation-plc/" target="_blank">Blackstone - Signature Aviation Acquisition Announcement</a></li>
-            <li><a href="https://www.mergersight.com/post/blackstone-s-gip-s-and-cascade-s-3-5b-takeover-of-signature-aviation" target="_blank">MergerSight - $4.7B Takeover Analysis</a></li>
             <li><a href="https://www.globenewswire.com/news-release/2025/05/23/3087504/0/en/Fixed-Base-Operator-Market-Size-Predicted-to-Exceed-USD-41-49-Billion-by-2031-Rising-at-A-CAGR-of-7-6-The-Insight-Partners.html" target="_blank">The Insight Partners - FBO Market Size Forecast</a></li>
             <li><a href="https://www.verifiedmarketresearch.com/product/north-america-fixed-base-operators-fbo-market/" target="_blank">Verified Market Research - North America FBO Market</a></li>
             <li><a href="https://www.fortunebusinessinsights.com/industry-reports/business-jet-market-101585" target="_blank">Fortune Business Insights - Business Jet Market</a></li>
             <li><a href="https://www.jetnet.com/resources/blog/mid-2025-market-snapshot-business-jet-inventory-pricing-activity" target="_blank">JETNET - Mid-2025 Market Snapshot</a></li>
-            <li><a href="https://www.aerotime.aero/articles/business-aviation-booming-2025-global-surge" target="_blank">AeroTime - Business Aviation Booming 2025</a></li>
+            <li><a href="https://www.aerotime.aero/articles/business-aviation-booming-2025-global-surge" target="_blank">AeroTime Hub / Avi-Go - Business Aviation Regional Growth 2025</a></li>
             <li><a href="https://privatejetcardcomparisons.com/research/new-private-jet-deliveries-by-manufacturer-2015-to-2020/" target="_blank">Private Jet Card Comparisons - Delivery Data</a></li>
             <li><a href="https://aerospace.honeywell.com/us/en/about-us/press-release/2025/10/business-jet-demand-forecast" target="_blank">Honeywell - 10-Year Business Jet Forecast</a></li>
-            <li><a href="https://flyapg.com/blog/global-business-aviation-market-expansion-2025" target="_blank">APG - Global Business Aviation Expansion</a></li>
             <li><a href="https://www.bloomberg.com/news/articles/2025-04-16/kkr-is-said-to-explore-10-billion-sale-of-atlantic-aviation" target="_blank">Bloomberg - KKR Atlantic Aviation $10B Sale</a></li>
             <li><a href="https://www.atlanticaviation.com/news/" target="_blank">Atlantic Aviation News & Acquisitions</a></li>
             <li><a href="https://www.jetaviation.com/company/about/" target="_blank">Jet Aviation - About (General Dynamics)</a></li>
@@ -1060,15 +1465,20 @@
             <li><a href="https://rngstrategyconsulting.com/insights/industry/aerospace-defense/fbo-industry-business-model/" target="_blank">RNG Strategy - FBO Business Model & Revenue Mix</a></li>
             <li><a href="https://www.iata.org/en/pressroom/2025-releases/2025-12-09-04/" target="_blank">IATA - SAF Production Growth Report</a></li>
             <li><a href="https://www.fortunebusinessinsights.com/sustainable-aviation-fuel-saf-market-111563" target="_blank">Fortune Business Insights - SAF Market Forecast</a></li>
-            <li><a href="https://www.spglobal.com/energy/en/news-research/latest-news/agriculture/120925-global-saf-supply-to-slow-in-2026-on-high-costs-policy-issues-iata" target="_blank">S&P Global - SAF Supply Outlook</a></li>
-            <li><a href="https://altrata.com/reports/world-ultra-wealth-report-2025" target="_blank">Altrata - World Ultra Wealth Report 2025</a></li>
+            <li><a href="https://www.prnewswire.com/news-releases/altrata-finds-the-ultra-wealthy-population-now-account-for-a-combined-net-worth-twice-the-size-of-the-us-economy-302571104.html" target="_blank">Altrata - World Ultra Wealth Report 2025 (via PR Newswire)</a></li>
             <li><a href="https://impactwealth.org/private-jet-demand-hits-all-time-high-in-2025/" target="_blank">Impact Wealth - Private Jet Demand 2025</a></li>
             <li><a href="https://investors.boeing.com/investors/news/press-release-details/2025/Boeing-Forecasts-20-Year-Global-Demand-for-Nearly-2-4-Million-New-Commercial-Pilots-Technicians-Cabin-Crew/default.aspx" target="_blank">Boeing - Pilot Demand Forecast</a></li>
             <li><a href="https://privatejetcardcomparisons.com/2026/02/23/2025s-30-biggest-charter-fractional-private-jet-companies/" target="_blank">Top 30 Charter/Fractional Companies 2025</a></li>
             <li><a href="https://www.fortunebusinessinsights.com/advanced-air-mobility-market-113574" target="_blank">Fortune Business Insights - AAM Market</a></li>
-            <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-02-27/fbo-chains-working-build-vertiports-evtol-ops" target="_blank">AIN - FBO Chains Building Vertiport Infrastructure</a></li>
+            <li><a href="https://www.globenewswire.com/news-release/2025/06/12/3098389/0/en/UrbanV-and-Signature-Aviation-Sign-JV-Agreement-to-Develop-Networks-of-Vertiports-in-the-U-S.html" target="_blank">UrbanV x Signature Aviation - Vertiport JV Announcement</a></li>
+            <li><a href="https://www.privsource.com/acquisitions/deal/jet-aviation-acquires-astonsky-fbo-operations-at-paris-le-bourget-ArSAm9" target="_blank">PrivSource - Jet Aviation / ASTONSKY Acquisition</a></li>
+            <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-03-28/ain-fbo-survey-2025-americas-and-emeaa" target="_blank">AIN FBO Survey 2025 - Americas and EMEAA</a></li>
             <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2024-04-01/ain-fbo-survey-2024-americas-and-emeaa" target="_blank">AIN FBO Survey 2024</a></li>
-            <li><a href="https://www.hkbac.com/wp-content/uploads/2025/05/Result-AINonline_FBOSurvey2025.pdf" target="_blank">AIN FBO Survey 2025 Results</a></li>
+            <li><a href="https://www.globenewswire.com/news-release/2024/10/16/2964163/0/en/Signature-Aviation-Earns-Certification-as-a-Great-Place-To-Work.html" target="_blank">Signature Aviation - Great Place To Work Certification</a></li>
+            <li><a href="https://www.globenewswire.com/news-release/2025/10/13/3165685/0/en/Signature-Aviation-Expands-Brand-Evolution-with-New-Tagline-Elevate-Every-Moment.html" target="_blank">Signature Aviation - "Elevate Every Moment" Brand Launch</a></li>
+            <li><a href="https://nata.aero/press/nata-honors-signature-aviation-leaders-with-2025-industry-excellence-awards/" target="_blank">NATA - 2025 Industry Excellence Awards for Signature Aviation</a></li>
+            <li><a href="https://www.sheltairaviation.com/news/sheltair-fbos-soar-in-ain-2025-fbo-survey-with-exceptional-rankings/" target="_blank">Sheltair - 2025 AIN FBO Survey Rankings</a></li>
+            <li><a href="https://www.marketsandmarkets.com/Market-Reports/sustainable-aviation-fuel-market-70301163.html" target="_blank">Markets and Markets - SAF Market Report</a></li>
         </ol>
     </div>
 </div>
@@ -1082,7 +1492,7 @@
         </div>
         <div class="footer-prepared">
             Prepared by <strong>Marketwake</strong><br>
-            Data as of March 27, 2026<br>
+            Data as of March 30, 2026<br>
             Next report: April 2026
         </div>
     </div>
@@ -1279,7 +1689,7 @@
             labels: ['Signature Aviation', 'Atlantic Aviation', 'Million Air', 'Jet Aviation', 'Sheltair'],
             datasets: [{
                 label: 'Locations',
-                data: [200, 106, 36, 30, 16],
+                data: [200, 106, 35, 30, 16],
                 backgroundColor: [gold, blue, purple, cyan, emerald],
                 borderRadius: 8,
                 borderSkipped: false,
@@ -1499,6 +1909,53 @@
                     ticks: { stepSize: 25, font: { size: 10 } },
                     pointLabels: { font: { size: 11, weight: '500' } },
                     grid: { color: 'rgba(0,0,0,0.06)' }
+                }
+            }
+        }
+    });
+
+    // 10. AIN FBO Survey Recognition Chart
+    new Chart(document.getElementById('ainSurveyChart'), {
+        type: 'bar',
+        data: {
+            labels: ['Sheltair', 'Jet Aviation', 'Million Air', 'Signature Aviation', 'Atlantic Aviation'],
+            datasets: [
+                {
+                    label: 'Top 5%',
+                    data: [4, 1, 1, 0, 0],
+                    backgroundColor: gold,
+                    borderRadius: 4
+                },
+                {
+                    label: 'Top 10%',
+                    data: [3, 4, 0, 0, 0],
+                    backgroundColor: blue,
+                    borderRadius: 4
+                },
+                {
+                    label: 'Top 20%',
+                    data: [3, 7, 0, 0, 0],
+                    backgroundColor: 'rgba(201,169,110,0.25)',
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top', labels: { font: { size: 11 } } },
+                datalabels: { display: false }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                    ticks: { stepSize: 2 }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: { font: { size: 11, weight: '500' } }
                 }
             }
         }
