@@ -7,7 +7,113 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        /* ---- Victor Serif (Headings & Subheadings) ---- */
+        @font-face {
+            font-family: 'Victor Serif';
+            src: url('fonts/victor-serif/Victor Serif/Web/VictorSerif-30Light.woff2') format('woff2'),
+                 url('fonts/victor-serif/Victor Serif/Web/VictorSerif-30Light.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Victor Serif';
+            src: url('fonts/victor-serif/Victor Serif/Web/VictorSerif-40Regular.woff2') format('woff2'),
+                 url('fonts/victor-serif/Victor Serif/Web/VictorSerif-40Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Victor Serif';
+            src: url('fonts/victor-serif/Victor Serif/Web/VictorSerif-50Medium.woff2') format('woff2'),
+                 url('fonts/victor-serif/Victor Serif/Web/VictorSerif-50Medium.woff') format('woff');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Victor Serif';
+            src: url('fonts/victor-serif/Victor Serif/Web/VictorSerif-60Semibold.woff2') format('woff2'),
+                 url('fonts/victor-serif/Victor Serif/Web/VictorSerif-60Semibold.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* ---- Inter Tight (Body & Small Headings) ---- */
+        @font-face {
+            font-family: 'Inter Tight';
+            src: url('fonts/inter-tight/Inter_Tight/static/InterTight-Light.ttf') format('truetype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter Tight';
+            src: url('fonts/inter-tight/Inter_Tight/static/InterTight-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter Tight';
+            src: url('fonts/inter-tight/Inter_Tight/static/InterTight-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter Tight';
+            src: url('fonts/inter-tight/Inter_Tight/static/InterTight-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter Tight';
+            src: url('fonts/inter-tight/Inter_Tight/static/InterTight-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Inter Tight';
+            src: url('fonts/inter-tight/Inter_Tight/static/InterTight-ExtraBold.ttf') format('truetype');
+            font-weight: 800;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* ---- Space Grotesk (Labels & Preheaders) ---- */
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url('fonts/space-grotesk/Space_Grotesk/static/SpaceGrotesk-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url('fonts/space-grotesk/Space_Grotesk/static/SpaceGrotesk-Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url('fonts/space-grotesk/Space_Grotesk/static/SpaceGrotesk-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url('fonts/space-grotesk/Space_Grotesk/static/SpaceGrotesk-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
         :root {
             --navy: #0a1628;
@@ -95,7 +201,7 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Victor Serif', Georgia, serif;
             font-size: 52px;
             font-weight: 400;
             line-height: 1.15;
@@ -190,7 +296,7 @@
         }
 
         .section-title {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Victor Serif', Georgia, serif;
             font-size: 28px;
             color: var(--navy);
         }
@@ -556,7 +662,7 @@
         }
 
         .footer-logo {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Victor Serif', Georgia, serif;
             font-size: 18px;
             color: var(--white);
             margin-bottom: 8px;
@@ -586,7 +692,7 @@
         }
 
         .sources-section h3 {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Victor Serif', Georgia, serif;
             font-size: 22px;
             margin-bottom: 20px;
             color: var(--navy);
