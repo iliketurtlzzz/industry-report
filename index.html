@@ -116,25 +116,33 @@
         }
 
         :root {
-            --navy: #0a1628;
-            --navy-light: #132240;
-            --navy-medium: #1a2d50;
-            --gold: #c9a96e;
-            --gold-light: #dfc89e;
-            --gold-dark: #a88b4a;
+            /* Marketwake Brand Palette */
+            --navy: #0C0C0C;
+            --navy-light: #1a1a1e;
+            --navy-medium: #222226;
+            --gold: #EEFF25;
+            --gold-light: #f5ff80;
+            --gold-dark: #c0cc1e;
             --white: #ffffff;
-            --gray-100: #f7f8fa;
-            --gray-200: #e8ebf0;
-            --gray-300: #d1d5db;
+            --gray-100: #F0F1F2;
+            --gray-200: #EAE8E1;
+            --gray-300: #B4C6BB;
             --gray-400: #9ca3af;
             --gray-500: #6b7280;
-            --emerald: #10b981;
-            --emerald-dark: #059669;
-            --red: #ef4444;
-            --blue: #3b82f6;
-            --amber: #f59e0b;
+            --emerald: #CEFF58;
+            --emerald-dark: #9abe2e;
+            --red: #FF5E30;
+            --blue: #0038FF;
+            --amber: #EEFF25;
             --purple: #8b5cf6;
             --cyan: #06b6d4;
+            /* MW originals */
+            --off-white: #F0F1F2;
+            --neon-yellow: #EEFF25;
+            --orange: #FF5E30;
+            --neon-green: #CEFF58;
+            --muted-green: #B4C6BB;
+            --beige: #EAE8E1;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -261,7 +269,7 @@
             border-bottom: 1px dotted var(--gray-500);
         }
 
-        .hero-stat-source a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+        .hero-stat-source a:hover { color: var(--neon-yellow); border-color: var(--neon-yellow); }
 
         /* Main Content */
         .container {
@@ -438,15 +446,15 @@
         .comp-table tbody tr:last-child td:first-child { border-radius: 0 0 0 12px; }
         .comp-table tbody tr:last-child td:last-child { border-radius: 0 0 12px 0; }
 
-        .comp-table tbody tr:hover { background: rgba(201,169,110,0.04); }
+        .comp-table tbody tr:hover { background: rgba(238,255,37,0.04); }
 
         .comp-table .highlight-row {
-            background: rgba(201,169,110,0.08);
+            background: rgba(238,255,37,0.08);
             font-weight: 600;
         }
 
         .comp-table .highlight-row:hover {
-            background: rgba(201,169,110,0.12);
+            background: rgba(238,255,37,0.12);
         }
 
         .badge {
@@ -458,7 +466,7 @@
             font-weight: 600;
         }
 
-        .badge-gold { background: rgba(201,169,110,0.15); color: var(--gold-dark); }
+        .badge-gold { background: rgba(238,255,37,0.15); color: var(--gold-dark); }
         .badge-green { background: rgba(16,185,129,0.1); color: var(--emerald-dark); }
         .badge-blue { background: rgba(59,130,246,0.1); color: var(--blue); }
         .badge-purple { background: rgba(139,92,246,0.1); color: var(--purple); }
@@ -527,7 +535,7 @@
         .hero .source-quote {
             background: rgba(255,255,255,0.06);
             color: var(--gray-300);
-            border-left-color: var(--gold);
+            border-left-color: var(--neon-yellow);
         }
 
         /* Trend Cards */
@@ -600,7 +608,7 @@
             top: 8px;
             bottom: 8px;
             width: 2px;
-            background: linear-gradient(to bottom, var(--gold), var(--navy));
+            background: linear-gradient(to bottom, var(--neon-yellow), var(--blue));
             border-radius: 2px;
         }
 
@@ -738,7 +746,7 @@
             letter-spacing: 1px;
             margin-bottom: 16px;
             padding-bottom: 8px;
-            border-bottom: 2px solid var(--gold);
+            border-bottom: 2px solid var(--neon-yellow);
             display: inline-block;
         }
 
@@ -1636,15 +1644,15 @@
     Chart.defaults.plugins.legend.labels.pointStyle = 'circle';
     Chart.defaults.plugins.legend.labels.padding = 20;
 
-    const navy = '#0a1628';
-    const gold = '#c9a96e';
-    const goldLight = '#dfc89e';
-    const emerald = '#10b981';
-    const blue = '#3b82f6';
+    const navy = '#0C0C0C';
+    const gold = '#EEFF25';
+    const goldLight = '#f5ff80';
+    const emerald = '#CEFF58';
+    const blue = '#0038FF';
     const purple = '#8b5cf6';
-    const amber = '#f59e0b';
+    const amber = '#EEFF25';
     const cyan = '#06b6d4';
-    const red = '#ef4444';
+    const red = '#FF5E30';
 
     // 1. FBO Market Growth Chart
     new Chart(document.getElementById('marketGrowthChart'), {
@@ -1657,13 +1665,13 @@
                 backgroundColor: function(ctx) {
                     const chart = ctx.chart;
                     const {ctx: context, chartArea} = chart;
-                    if (!chartArea) return gold;
+                    if (!chartArea) return blue;
                     const gradient = context.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-                    gradient.addColorStop(0, 'rgba(201,169,110,0.3)');
-                    gradient.addColorStop(1, 'rgba(201,169,110,0.9)');
+                    gradient.addColorStop(0, 'rgba(0,56,255,0.2)');
+                    gradient.addColorStop(1, 'rgba(0,56,255,0.85)');
                     return gradient;
                 },
-                borderColor: gold,
+                borderColor: blue,
                 borderWidth: 1,
                 borderRadius: 6,
                 borderSkipped: false
@@ -1702,7 +1710,7 @@
             labels: ['Fuel Sales', 'Ground Handling', 'Hangar & Ramp Fees', 'MRO / Technical', 'Passenger Amenities', 'Other Services'],
             datasets: [{
                 data: [55, 15, 12, 10, 5, 3],
-                backgroundColor: [navy, gold, blue, purple, emerald, amber],
+                backgroundColor: [navy, blue, '#FF5E30', purple, '#CEFF58', cyan],
                 borderWidth: 2,
                 borderColor: '#ffffff',
                 hoverOffset: 8
@@ -1739,8 +1747,8 @@
                 {
                     label: '2024',
                     data: [151, 134, 130, 152, 42],
-                    backgroundColor: 'rgba(201,169,110,0.3)',
-                    borderColor: gold,
+                    backgroundColor: 'rgba(0,56,255,0.2)',
+                    borderColor: blue,
                     borderWidth: 1,
                     borderRadius: 4
                 },
@@ -1780,7 +1788,7 @@
                 label: 'YoY Growth %',
                 data: [45, 42, 30, 15, 3, -2],
                 backgroundColor: function(ctx) {
-                    return ctx.raw >= 0 ? emerald : red;
+                    return ctx.raw >= 0 ? blue : '#FF5E30';
                 },
                 borderRadius: 6,
                 borderSkipped: false
@@ -1819,7 +1827,7 @@
             datasets: [{
                 label: 'Locations',
                 data: [200, 106, 35, 30, 16],
-                backgroundColor: [gold, blue, purple, cyan, emerald],
+                backgroundColor: [blue, '#FF5E30', purple, cyan, '#CEFF58'],
                 borderRadius: 8,
                 borderSkipped: false,
                 barThickness: 40
@@ -1858,12 +1866,12 @@
             datasets: [{
                 label: 'SAF Market ($B)',
                 data: [2.72, 4.02, 8.5, 16.0, 27.0, 40.09],
-                borderColor: emerald,
-                backgroundColor: 'rgba(16,185,129,0.1)',
+                borderColor: '#CEFF58',
+                backgroundColor: 'rgba(206,255,88,0.15)',
                 fill: true,
                 tension: 0.4,
                 pointRadius: 5,
-                pointBackgroundColor: emerald,
+                pointBackgroundColor: '#CEFF58',
                 pointBorderColor: '#fff',
                 pointBorderWidth: 2,
                 borderWidth: 3
@@ -1947,7 +1955,7 @@
                 {
                     label: 'Production (Mt)',
                     data: [1.0, 1.9, 2.4, 5.0, 10.0, 25.0],
-                    backgroundColor: emerald,
+                    backgroundColor: blue,
                     borderRadius: 4,
                     yAxisID: 'y'
                 },
@@ -1955,11 +1963,11 @@
                     label: 'Market Value ($B)',
                     data: [1.5, 2.72, 4.02, 8.5, 16.0, 40.09],
                     type: 'line',
-                    borderColor: gold,
+                    borderColor: '#FF5E30',
                     backgroundColor: 'transparent',
                     borderWidth: 3,
                     pointRadius: 5,
-                    pointBackgroundColor: gold,
+                    pointBackgroundColor: '#FF5E30',
                     pointBorderColor: '#fff',
                     pointBorderWidth: 2,
                     tension: 0.4,
@@ -2009,18 +2017,18 @@
             datasets: [{
                 label: 'Current Impact',
                 data: [85, 78, 55, 30, 65, 80, 70, 90],
-                borderColor: navy,
-                backgroundColor: 'rgba(10,22,40,0.1)',
+                borderColor: blue,
+                backgroundColor: 'rgba(0,56,255,0.08)',
                 borderWidth: 2,
-                pointBackgroundColor: navy,
+                pointBackgroundColor: blue,
                 pointRadius: 4
             }, {
                 label: 'Projected Impact (2030)',
                 data: [92, 85, 85, 75, 90, 85, 82, 75],
-                borderColor: gold,
-                backgroundColor: 'rgba(201,169,110,0.1)',
+                borderColor: '#EEFF25',
+                backgroundColor: 'rgba(238,255,37,0.08)',
                 borderWidth: 2,
-                pointBackgroundColor: gold,
+                pointBackgroundColor: '#EEFF25',
                 pointRadius: 4
             }]
         },
@@ -2050,7 +2058,7 @@
             labels: ['SEO & Content', 'PPC / Paid Search', 'Social Media & Brand', 'Website & Technology', 'PR & Partnerships'],
             datasets: [{
                 data: [37, 27, 18, 12, 6],
-                backgroundColor: [navy, gold, blue, purple, emerald],
+                backgroundColor: [navy, blue, '#FF5E30', purple, '#CEFF58'],
                 borderWidth: 2,
                 borderColor: '#ffffff',
                 hoverOffset: 8
@@ -2087,7 +2095,7 @@
                 {
                     label: 'Aviation Industry',
                     data: [7.4, 2.2, 0.5, 0.5],
-                    backgroundColor: gold,
+                    backgroundColor: blue,
                     borderRadius: 4
                 },
                 {
