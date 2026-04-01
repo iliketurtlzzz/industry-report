@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
         :root {
             --navy: #0a1628;
@@ -34,7 +34,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--gray-100);
             color: var(--navy);
             line-height: 1.6;
@@ -95,7 +95,7 @@
         }
 
         .hero h1 {
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 52px;
             font-weight: 400;
             line-height: 1.15;
@@ -176,6 +176,7 @@
         }
 
         .section-number {
+            font-family: 'Space Grotesk', sans-serif;
             width: 40px; height: 40px;
             background: var(--navy);
             color: var(--gold);
@@ -189,7 +190,7 @@
         }
 
         .section-title {
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 28px;
             color: var(--navy);
         }
@@ -243,6 +244,7 @@
         }
 
         .kpi-label {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 12px;
             color: var(--gray-500);
             font-weight: 500;
@@ -342,6 +344,7 @@
         }
 
         .badge {
+            font-family: 'Space Grotesk', sans-serif;
             display: inline-block;
             padding: 3px 10px;
             border-radius: 100px;
@@ -553,7 +556,7 @@
         }
 
         .footer-logo {
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 18px;
             color: var(--white);
             margin-bottom: 8px;
@@ -583,7 +586,7 @@
         }
 
         .sources-section h3 {
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Playfair Display', Georgia, serif;
             font-size: 22px;
             margin-bottom: 20px;
             color: var(--navy);
@@ -609,6 +612,84 @@
         .source-list li {
             break-inside: avoid;
             margin-bottom: 4px;
+        }
+
+        /* Update Timeline */
+        .update-timeline {
+            position: relative;
+        }
+
+        .update-group {
+            margin-bottom: 32px;
+        }
+
+        .update-group-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+        }
+
+        .update-item {
+            display: flex;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--gray-200);
+            align-items: flex-start;
+        }
+
+        .update-item:last-child { border-bottom: none; }
+
+        .update-date {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gray-400);
+            white-space: nowrap;
+            min-width: 80px;
+            padding-top: 2px;
+        }
+
+        .update-content h5 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .update-content p {
+            font-size: 12px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* Stat Row */
+        .stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .stat-row:last-child { border-bottom: none; }
+
+        .stat-row-label {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        .stat-row-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--navy);
         }
 
         /* Responsive */
@@ -767,12 +848,12 @@
             </div>
             <div class="card">
                 <div class="card-title">Regional Business Aviation Growth</div>
-                <div class="card-subtitle">Year-over-year activity change by region (Jan-Aug 2025 vs 2024)</div>
+                <div class="card-subtitle">Year-over-year activity change by region (Jan-Aug 2025 vs 2024). Note: Middle East departures down 44% YoY in Mar 2026 due to conflict; Jet-A costs 2x+ pre-conflict levels.</div>
                 <div class="chart-container">
                     <canvas id="regionalChart"></canvas>
                 </div>
-                <div class="kpi-source" style="margin-top:12px"><a href="https://www.aerotime.aero/articles/business-aviation-booming-2025-global-surge" target="_blank">Source: AeroTime Hub / Avi-Go Analytics</a></div>
-                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Brazil saw a 45% jump in flights in 2025 compared with last year, followed by Colombia at 42%. Fresh data from Avi-Go show where flight activity is rising fastest and why private aircraft use is expanding beyond established regions."</div></details>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://www.aerotime.aero/articles/business-aviation-booming-2025-global-surge" target="_blank">Source: AeroTime Hub / Avi-Go</a> | <a href="https://bjtonline.com/business-jet-news/middle-east-conflict-continues-to-weigh-on-private-aviation" target="_blank">BJT Online / WingX</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Brazil saw a 45% jump in flights in 2025 compared with last year, followed by Colombia at 42%." BJT/WingX (Mar 2026): "The 44% year-on-year decline is the sharpest we have recorded since the conflict began, and with Jet-A prices continuing to climb, operators across the region are facing a double headwind of suppressed demand and soaring fuel costs."</div></details>
             </div>
         </div>
     </div>
@@ -1140,6 +1221,240 @@
         </div>
     </div>
 
+    <!-- SECTION 8: INDUSTRY MARKETING INTELLIGENCE -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">08</div>
+            <div>
+                <div class="section-title">Industry Marketing Intelligence</div>
+                <div class="section-subtitle">How private aviation companies are investing in marketing and where the market is heading</div>
+            </div>
+        </div>
+
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Wheels Up Marketing Spend (FY2025)</div>
+                <div class="kpi-value">$88.6M</div>
+                <div class="kpi-change up">+5.1% vs FY2024 ($84.3M)</div>
+                <div class="kpi-source"><a href="https://www.prnewswire.com/news-releases/wheels-up-announces-fourth-quarter-results-302692176.html" target="_blank">Wheels Up 10-K (NYSE: UP)</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Sales and marketing expense for FY2025 was $88.6M, up from $84.3M in FY2024. The increase was driven by a $5.2M increase in employee compensation and a $1.4M increase in marketing events spend."</div></details>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Industry Benchmark: Marketing as % of Revenue</div>
+                <div class="kpi-value">6-12%</div>
+                <div class="kpi-change up">Wheels Up at 10.6% of $792M rev</div>
+                <div class="kpi-source"><a href="https://epicedits.co.uk/blog/private-jet-marketing-budget-guide/" target="_blank">Aviation Marketing Benchmarks</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Aviation companies should budget 6-12% of annual revenue for marketing. Startups: 10-12%, growth phase: 8-10%, established operators: 6-8%."</div></details>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Charter Market (2025)</div>
+                <div class="kpi-value">$16.4B</div>
+                <div class="kpi-change up">Growing to $25.8B by 2031</div>
+                <div class="kpi-source"><a href="https://www.businessresearchinsights.com/market-reports/private-jets-charter-market-119840" target="_blank">Business Research Insights</a></div>
+                <details class="source-dropdown"><summary>View source excerpt</summary><div class="source-quote">"Private jet charter services market valued at $16.38B in 2025, projected to $25.79B by 2031, CAGR of 7.86%."</div></details>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 24px;">
+            <div class="card">
+                <div class="card-title">Aviation Marketing Channel Allocation</div>
+                <div class="card-subtitle">Recommended budget split for aviation service companies</div>
+                <div class="chart-container">
+                    <canvas id="channelChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://aviationbusinessconsultants.com/aviation-marketing/aviation-digital-marketing/" target="_blank">Source: Aviation Business Consultants / Industry Benchmarks</a></div>
+            </div>
+            <div class="card">
+                <div class="card-title">Social Media Engagement Benchmarks</div>
+                <div class="card-subtitle">Aviation industry average engagement rates by platform (2025)</div>
+                <div class="chart-container">
+                    <canvas id="socialChart"></canvas>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://www.socialinsider.io/social-media-benchmarks/airlines" target="_blank">Source: Socialinsider / Rival IQ 2025</a></div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <div class="card-title">Paid Media Platform Trends</div>
+                <div class="card-subtitle">Key 2025-2026 ad platform changes affecting aviation marketing</div>
+                <div style="margin-top: 8px;">
+                    <div class="stat-row">
+                        <div class="stat-row-label">LinkedIn share of B2B ad budgets</div>
+                        <div class="stat-row-value" style="color: var(--blue);">39% <span style="font-size: 11px; color: var(--emerald);">(up from 31%)</span></div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-row-label">LinkedIn Ads ROAS (vs Google 78%, Meta 29%)</div>
+                        <div class="stat-row-value" style="color: var(--blue);">113%</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-row-label">Air Charter avg. CPC (Google Ads)</div>
+                        <div class="stat-row-value">$1.76</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-row-label">Meta Advantage+ avg. CPA reduction</div>
+                        <div class="stat-row-value" style="color: var(--emerald);">-9%</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-row-label">LinkedIn personalized ads CPL reduction (US)</div>
+                        <div class="stat-row-value" style="color: var(--emerald);">-33%</div>
+                    </div>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://dreamdata.io/blog/dreamdata-2025-linkedin-ads-benchmarks-report-highlights" target="_blank">Dreamdata</a> | <a href="https://www.digitalposition.com/resources/blog/ppc/2024-google-ads-cpc-benchmarks-insights-from-3-6m-keywords/" target="_blank">Digital Position</a></div>
+            </div>
+            <div class="card">
+                <div class="card-title">Trade Show & Event Marketing</div>
+                <div class="card-subtitle">Major industry event data (2024-2025)</div>
+                <div style="margin-top: 8px;">
+                    <div class="stat-row">
+                        <div class="stat-row-label">NBAA-BACE 2024 (Las Vegas)</div>
+                        <div class="stat-row-value">~800 exhibitors / ~19K attendees</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-row-label">NBAA-BACE 2025 (Las Vegas)</div>
+                        <div class="stat-row-value">75+ education sessions</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-row-label">EBACE 2025 (Geneva)</div>
+                        <div class="stat-row-value">10,500 visitors / 100+ countries</div>
+                    </div>
+                    <div class="stat-row">
+                        <div class="stat-row-label">EBACE format change</div>
+                        <div class="stat-row-value" style="font-size: 12px;">No static display (EBAA took over)</div>
+                    </div>
+                </div>
+                <div class="kpi-source" style="margin-top:12px"><a href="https://nbaa.org/2025-press-releases/2025-nbaa-bace-wows-attendees-and-exhibitors/" target="_blank">NBAA</a> | <a href="https://www.ebaa.org/press/ebace25-change-is-in-the-air/" target="_blank">EBAA</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 9: SEO, PAID MEDIA & PLATFORM UPDATES -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">09</div>
+            <div>
+                <div class="section-title">Recent SEO & Paid Media Updates</div>
+                <div class="section-subtitle">Google algorithm changes, ad platform updates, and SEO tool releases affecting visibility</div>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-title" style="display: flex; align-items: center; gap: 8px;">
+                    <span style="color: var(--blue);">&#9679;</span> Google Algorithm Updates
+                </div>
+                <div class="card-subtitle">Core updates and ranking changes</div>
+                <div class="update-timeline">
+                    <div class="update-item">
+                        <div class="update-date">Mar 27, 2026</div>
+                        <div class="update-content">
+                            <h5>March 2026 Core Update</h5>
+                            <p>Rolling out over 2 weeks. Impact TBD. Monitor rankings closely.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">Dec 11, 2025</div>
+                        <div class="update-content">
+                            <h5>December 2025 Core Update</h5>
+                            <p>E-E-A-T expanded beyond YMYL to all competitive searches. Service pages now under same scrutiny as financial/medical content.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">Jun 30, 2025</div>
+                        <div class="update-content">
+                            <h5>June 2025 Core Update</h5>
+                            <p>Helpful content weighting increased. Sites with thin or scaled content without demonstrated value continued to decline.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">Mar 13, 2025</div>
+                        <div class="update-content">
+                            <h5>March 2025 Core Update</h5>
+                            <p>General ranking signal refresh. Completed March 27.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kpi-source" style="margin-top:8px"><a href="https://www.searchenginejournal.com/google-algorithm-history/" target="_blank">Search Engine Journal</a> | <a href="https://emfluence.com/blog/googles-core-algorithm-updates" target="_blank">Emfluence</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title" style="display: flex; align-items: center; gap: 8px;">
+                    <span style="color: var(--gold);">&#9679;</span> Paid Media Platform Changes
+                </div>
+                <div class="card-subtitle">Google Ads, LinkedIn, Meta updates</div>
+                <div class="update-timeline">
+                    <div class="update-item">
+                        <div class="update-date">2026</div>
+                        <div class="update-content">
+                            <h5>Google AI Max Campaigns</h5>
+                            <p>Keywordless Search campaigns using intent signals. All North America MMCs now have access. Reduces keyword control.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">Nov 2025</div>
+                        <div class="update-content">
+                            <h5>PMax Channel Reporting</h5>
+                            <p>Performance Max now shows spend/conversions by YouTube, Display, Search, Discover, Gmail, Maps. No longer a black box.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">Oct 2025</div>
+                        <div class="update-content">
+                            <h5>LinkedIn Structure Rename</h5>
+                            <p>Campaign Groups became "Campaigns"; Campaigns became "Ad Sets." Thought Leader Ads outperforming standard ads.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2025</div>
+                        <div class="update-content">
+                            <h5>Ads in AI Overviews</h5>
+                            <p>Google Ads now eligible in AI-generated answer sections. Requires high relevance scores for placement.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kpi-source" style="margin-top:8px"><a href="https://www.wordstream.com/blog/2025-google-ads-updates" target="_blank">WordStream</a> | <a href="https://dreamdata.io/blog/dreamdata-2025-linkedin-ads-benchmarks-report-highlights" target="_blank">Dreamdata</a></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title" style="display: flex; align-items: center; gap: 8px;">
+                    <span style="color: var(--emerald);">&#9679;</span> SEO Tool & Search Console Updates
+                </div>
+                <div class="card-subtitle">SEMrush, Ahrefs, GSC releases</div>
+                <div class="update-timeline">
+                    <div class="update-item">
+                        <div class="update-date">Mar 2026</div>
+                        <div class="update-content">
+                            <h5>GSC Branded vs Non-Branded Filter</h5>
+                            <p>Rolled out to all sites. Separates branded from non-branded traffic in Performance report. Key for measuring new audience reach.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2026</div>
+                        <div class="update-content">
+                            <h5>SEMrush One + AI Visibility</h5>
+                            <p>Rebranded platform tracks brand presence across ChatGPT, Perplexity, and Google AI features. Measures AI citation frequency.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">Nov 2025</div>
+                        <div class="update-content">
+                            <h5>GSC Custom Chart Annotations</h5>
+                            <p>Up to 200 annotations per property. Document launches, fixes, campaigns directly in the performance timeline.</p>
+                        </div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">2025</div>
+                        <div class="update-content">
+                            <h5>Ahrefs Brand Radar</h5>
+                            <p>Tracks AI system brand mentions across 150M+ prompts and six AI indexes. Measures GEO visibility.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kpi-source" style="margin-top:8px"><a href="https://developers.google.com/search/blog/2025/11/search-console-branded-filter" target="_blank">Google</a> | <a href="https://www.semrush.com/blog/top-ai-powered-semrush-features/" target="_blank">SEMrush</a></div>
+            </div>
+        </div>
+    </div>
+
     <!-- SOURCES -->
     <div class="sources-section">
         <h3>Sources & References</h3>
@@ -1176,6 +1491,13 @@
             <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2025-03-28/ain-fbo-survey-2025-americas-and-emeaa" target="_blank">AIN FBO Survey 2025 - Americas and EMEAA</a></li>
             <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2024-04-01/ain-fbo-survey-2024-americas-and-emeaa" target="_blank">AIN FBO Survey 2024</a></li>
             <li><a href="https://www.marketsandmarkets.com/Market-Reports/sustainable-aviation-fuel-market-70301163.html" target="_blank">Markets and Markets - SAF Market Report</a></li>
+            <li><a href="https://bjtonline.com/business-jet-news/middle-east-conflict-continues-to-weigh-on-private-aviation" target="_blank">BJT Online / WingX - Middle East Conflict Impact on Private Aviation</a></li>
+            <li><a href="https://www.prnewswire.com/news-releases/wheels-up-announces-fourth-quarter-results-302692176.html" target="_blank">Wheels Up - FY2025 Financial Results (NYSE: UP)</a></li>
+            <li><a href="https://dreamdata.io/blog/dreamdata-2025-linkedin-ads-benchmarks-report-highlights" target="_blank">Dreamdata - 2025 LinkedIn Ads Benchmarks Report</a></li>
+            <li><a href="https://www.socialinsider.io/social-media-benchmarks/airlines" target="_blank">Socialinsider - Aviation Social Media Benchmarks 2025</a></li>
+            <li><a href="https://www.searchenginejournal.com/google-algorithm-history/" target="_blank">Search Engine Journal - Google Algorithm Update History</a></li>
+            <li><a href="https://www.wordstream.com/blog/2025-google-ads-updates" target="_blank">WordStream - Google Ads Major Updates 2025</a></li>
+            <li><a href="https://developers.google.com/search/blog/2025/11/search-console-branded-filter" target="_blank">Google - Search Console Branded vs Non-Branded Filter</a></li>
             <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2026-03-26/2026-ain-fbo-survey" target="_blank">AIN FBO Survey 2026 - Americas and EMEAA</a></li>
             <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2026-03-25/ricci-views-private-equity-capital-industry-problem" target="_blank">AIN Online - Flexjet Chairman on PE Impact in Aviation</a></li>
             <li><a href="https://www.ainonline.com/aviation-news/business-aviation/2026-03-26/netjets-takes-delivery-its-first-global-8000" target="_blank">AIN Online - NetJets First Global 8000 Delivery</a></li>
@@ -1201,7 +1523,7 @@
 
 <script>
     // Global Chart.js defaults
-    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.font.family = "'Inter Tight', sans-serif";
     Chart.defaults.font.size = 12;
     Chart.defaults.color = '#6b7280';
     Chart.defaults.plugins.legend.labels.usePointStyle = true;
@@ -1613,6 +1935,86 @@
                 }
             }
         }
+    });
+
+    // 10. Marketing Channel Allocation
+    new Chart(document.getElementById('channelChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['SEO & Content', 'PPC / Paid Search', 'Social Media & Brand', 'Website & Technology', 'PR & Partnerships'],
+            datasets: [{
+                data: [37, 27, 18, 12, 6],
+                backgroundColor: [navy, gold, blue, purple, emerald],
+                borderWidth: 2,
+                borderColor: '#ffffff',
+                hoverOffset: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutout: '55%',
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: { font: { size: 11 }, padding: 12 }
+                },
+                datalabels: {
+                    color: '#fff',
+                    font: { weight: '700', size: 12 },
+                    formatter: v => v + '%',
+                    display: function(ctx) {
+                        return ctx.dataset.data[ctx.dataIndex] > 10;
+                    }
+                }
+            }
+        },
+        plugins: [ChartDataLabels]
+    });
+
+    // 11. Social Media Engagement Benchmarks
+    new Chart(document.getElementById('socialChart'), {
+        type: 'bar',
+        data: {
+            labels: ['TikTok', 'Instagram', 'Facebook', 'X / Twitter'],
+            datasets: [
+                {
+                    label: 'Aviation Industry',
+                    data: [7.4, 2.2, 0.5, 0.5],
+                    backgroundColor: gold,
+                    borderRadius: 4
+                },
+                {
+                    label: 'Cross-Industry Avg',
+                    data: [3.7, 0.48, 0.15, 0.12],
+                    backgroundColor: 'rgba(10,22,40,0.6)',
+                    borderRadius: 4
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'top' },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    color: navy,
+                    font: { weight: '600', size: 11 },
+                    formatter: v => v + '%'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: { color: 'rgba(0,0,0,0.04)' },
+                    ticks: { callback: v => v + '%' }
+                },
+                x: { grid: { display: false } }
+            }
+        },
+        plugins: [ChartDataLabels]
     });
 
 </script>
